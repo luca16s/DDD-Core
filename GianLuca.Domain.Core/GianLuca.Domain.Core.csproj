@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Gian Luca da Silva Figueiredo</Authors>
+    <Company>Gian Luca da Silva Figueiredo</Company>
+    <Copyright>Gian Luca da Silva Figueiredo</Copyright>
+    <PackageLicenseUrl>https://github.com/luca16s/Domain-Core/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/luca16s/Domain-Core</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/luca16s/Domain-Core</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Library For using on my DDD Projects.</Description>
   </PropertyGroup>
 
 </Project>

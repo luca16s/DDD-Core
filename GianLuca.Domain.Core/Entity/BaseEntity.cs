@@ -1,13 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GianLuca.Domain.Core.Entity
 {
     public class BaseEntity
     {
-        public virtual Guid Id { get; set; }
+        private Guid _value = Guid.Empty;
+
+        public virtual Guid Id
+        {
+            get => _value;
+            set
+            {
+                _value = value;
+
+                if (_value == Guid.Empty)
+                {
+                    _value = Guid.NewGuid();
+                }
+            }
+        }
     }
 }
