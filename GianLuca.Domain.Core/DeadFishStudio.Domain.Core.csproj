@@ -10,6 +10,12 @@
     <RepositoryUrl>https://github.com/luca16s/Domain-Core</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Library For using on my DDD Projects.</Description>
+    <PackageId>DeadFishStudio.Domain.Core</PackageId>
+    <Product>DeadFishStudio.Domain.Core</Product>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+    <AssemblyName>DeadFishStudio.Domain.Core</AssemblyName>
+    <RootNamespace>DeadFishStudio.Domain.Core</RootNamespace>
   </PropertyGroup>
 
 </Project>
