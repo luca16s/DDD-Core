@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GianLuca.Domain.Core.Entity;
+using DeadFishStudio.Domain.Core.Entity;
 
-namespace GianLuca.Domain.Core.Interfaces.Services
+namespace DeadFishStudio.Domain.Core.Interfaces.Services
 {
     public interface IBaseServices<T> where T : BaseEntity
     {
