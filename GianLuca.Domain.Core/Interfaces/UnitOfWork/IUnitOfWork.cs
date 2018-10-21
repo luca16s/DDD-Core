@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace DeadFishStudio.Domain.Core.Interfaces.UnitOfWork
+namespace GianLuca.Domain.Core.Interfaces.UnitOfWork
 {
     public interface IUnitOfWork : IDisposable
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DeadFishStudio.Domain.Core.Entity
+namespace GianLuca.Domain.Core.Entity
 {
     public class BaseEntity
     {

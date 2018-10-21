@@ -1,7 +1,7 @@
-using DeadFishStudio.Domain.Core.Entity;
+using GianLuca.Domain.Core.Entity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DeadFishStudio.Domain.Core.UnitTest
+namespace GianLuca.Domain.Core.UnitTest
 {
     [TestClass]
     public class BaseEntityTest
