@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GianLuca.Domain.Core.Entity;
+﻿using GianLuca.Domain.Core.Entity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace GianLuca.Domain.Core.UnitTest
+namespace GianLuca.Domain.Core
 {
     [TestClass]
     public class BaseEntityTest
@@ -18,5 +13,5 @@ namespace GianLuca.Domain.Core.UnitTest
 
             Assert.IsNotNull(entity);
         }
-    } 
+    }
 }

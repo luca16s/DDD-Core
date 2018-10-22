@@ -11,9 +11,6 @@ namespace GianLuca.Domain.Core.Entity
             _value = Guid.NewGuid();
         }
 
-        public virtual Guid Id
-        {
-            get { return _value; }
-        }
+        public virtual Guid Id => _value;
     }
 }
