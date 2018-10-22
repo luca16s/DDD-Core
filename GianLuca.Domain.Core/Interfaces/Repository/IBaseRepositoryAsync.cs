@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DeadFishStudio.Domain.Core.Entity;
+using GianLuca.Domain.Core.Entity;
 
-namespace DeadFishStudio.Domain.Core.Interfaces.Repository
+namespace GianLuca.Domain.Core.Interfaces.Repository
 {
     public interface IBaseRepositoryAsync<T> where T : BaseEntity
     {
