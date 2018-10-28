@@ -6,3 +6,4 @@ script:
  - cd GianLuca.Domain.Core
  - dotnet restore
  - dotnet build
+ - dotnet test
