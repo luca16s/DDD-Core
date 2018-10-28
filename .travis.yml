@@ -1,6 +1,11 @@
+os:
+  - windows
+  - linux
+  - osx
 language: csharp
+solution: GianLuca.Domain.Core.sln
 mono: none
-dotnet: 2.0.0
+dotnet: 2.1.0
 dist: trusty
 before_install:
   - cd .travis/
@@ -9,3 +14,4 @@ before_install:
 script:
   - sudo ./build.sh --quiet verify
   - sudo ./test.sh --quiet verify
+  - grep "Test Results" build.log
