@@ -8,10 +8,6 @@ mono: none
 dotnet: 2.0.0
 dist: trusty
 before_install:
-<<<<<<< HEAD
-=======
-  - nuget restore
->>>>>>> afb464bc77e7a49b0221790db6ac182da96a3465
   - choco install opencover.portable
   - choco install codecov
   - chmod +x codecov.sh
