@@ -7,5 +7,6 @@ before_install:
   - chmod +x build.sh
   - chmod +x test.sh
 script:
-  - sudo .travis/build.sh --quiet verify
-  - sudo .travis/test.sh --quiet verify
+  - cd .travis/
+  - sudo ./build.sh --quiet verify
+  - sudo ./test.sh --quiet verify
