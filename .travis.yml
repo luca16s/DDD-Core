@@ -8,10 +8,15 @@ mono: none
 dotnet: 2.0.0
 dist: trusty
 before_install:
+  - nuget restore
+  - choco install opencover.portable
+  - choco install codecov
+  - chmod +x codecov.sh
   - cd .travis/
   - chmod +x build.sh
   - chmod +x test.sh
 script:
   - sudo ./build.sh --quiet verify
   - sudo ./test.sh --quiet verify
-  - grep "Test Results" build.log
+  - cd ../
+  - sudo ./codecov.sh
