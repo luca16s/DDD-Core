@@ -4,15 +4,12 @@ namespace GianLuca.Domain.Core.Entity
 {
     public class BaseEntity
     {
-        public BaseEntity()
-        {
-            Id = Guid.NewGuid();
-        }
+        public BaseEntity() => Id = Guid.NewGuid();
 
-        public BaseEntity(Guid guid)
+        public BaseEntity(Guid idGuid)
         {
-            if (guid != Guid.Empty)
-                Id = guid;
+            if (idGuid != Guid.Empty)
+                Id = idGuid;
         }
 
         public virtual Guid Id { get; }
