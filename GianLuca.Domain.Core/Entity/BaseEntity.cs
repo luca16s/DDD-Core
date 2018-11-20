@@ -12,6 +12,6 @@ namespace GianLuca.Domain.Core.Entity
                 Id = idGuid;
         }
 
-        public virtual Guid Id { get; }
+        public Guid Id { get; }
     }
 }
