@@ -10,8 +10,8 @@ before_install:
   - cd .travis/
   - chmod +x build.sh
   - chmod +x test.sh
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - chmod +x codecov.sh
 script:
   - sudo ./build.sh --quiet verify
   - sudo ./test.sh --quiet verify
+  - sudo ./codecov.sh --quiet verify
