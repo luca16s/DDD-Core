@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using GianLuca.Domain.Core.Entity;
-
-namespace GianLuca.Domain.Core.Interfaces.Repository
+﻿namespace GianLuca.Domain.Core.Interfaces.Repository
 {
+    using System;
+    using System.Collections.Generic;
+    using GianLuca.Domain.Core.Entity;
+
     public interface IBaseRepository<T> where T : BaseEntity
     {
         T AddItem(T item);

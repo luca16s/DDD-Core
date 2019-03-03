@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using GianLuca.Domain.Core.Entity;
-
-namespace GianLuca.Domain.Core.Interfaces.Services
+﻿namespace GianLuca.Domain.Core.Interfaces.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using GianLuca.Domain.Core.Entity;
+
     public interface IBaseServicesAsync<T> where T : BaseEntity
     {
         Task<T> AddItemAsync(T item);

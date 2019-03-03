@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-
-namespace GianLuca.Domain.Core.Interfaces.UnitOfWork
+﻿namespace GianLuca.Domain.Core.Interfaces.UnitOfWork
 {
+    using System;
+    using System.Threading.Tasks;
+
     public interface IUnitOfWork : IDisposable
     {
         void BeginTransaction();

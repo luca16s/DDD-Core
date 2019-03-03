@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using GianLuca.Domain.Core.Entity;
-
-namespace GianLuca.Domain.Core.Interfaces.Services
+﻿namespace GianLuca.Domain.Core.Interfaces.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using GianLuca.Domain.Core.Entity;
+
     public interface IBaseServices<T> where T : BaseEntity
     {
         T AddItem(T item);

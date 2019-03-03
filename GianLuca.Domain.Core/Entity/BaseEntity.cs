@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace GianLuca.Domain.Core.Entity
+﻿namespace GianLuca.Domain.Core.Entity
 {
+    using System;
+
     public class BaseEntity
     {
         public BaseEntity() => this.Id = Guid.NewGuid();
