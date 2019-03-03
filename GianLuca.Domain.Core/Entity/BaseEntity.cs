@@ -1,4 +1,9 @@
-﻿namespace GianLuca.Domain.Core.Entity
+﻿// <copyright file="BaseEntity.cs" company="Gian Luca da Silva Figueiredo">
+// Copyright (c) Gian Luca da Silva Figueiredo. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+// </copyright>
+
+namespace GianLuca.Domain.Core.Entity
 {
     using System;
 
