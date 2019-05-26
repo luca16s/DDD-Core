@@ -5,7 +5,7 @@
     <Authors>Gian Luca da Silva Figueiredo</Authors>
     <Company>Gian Luca da Silva Figueiredo</Company>
     <Copyright>Gian Luca da Silva Figueiredo</Copyright>
-    <PackageLicenseUrl>https://github.com/luca16s/Domain-Core/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/luca16s/Domain-Core/blob/develop/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/luca16s/Domain-Core</PackageProjectUrl>
     <RepositoryUrl>https://github.com/luca16s/Domain-Core</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -17,6 +17,7 @@
     <AssemblyName>GianLuca.Domain.Core</AssemblyName>
     <RootNamespace>GianLuca.Domain.Core</RootNamespace>
     <Version>1.0.3</Version>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -42,6 +43,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
     <PackageReference Include="OpenCover" Version="4.7.922" />
     <PackageReference Include="ReportGenerator" Version="4.0.14" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.0.2">

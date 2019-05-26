@@ -9,12 +9,17 @@ namespace GianLuca.Domain.Core.Interfaces.Repository
     using System.Collections.Generic;
     using GianLuca.Domain.Core.Entity;
 
-    public interface IBaseRepository<T> where T : BaseEntity
+    public interface IBaseRepository<T>
+        where T : BaseEntity
     {
         T AddItem(T item);
+
         T GetItem(Guid id);
+
         IEnumerable<T> GetAllItems();
+
         T UpdateItem(Guid id, T item);
+
         void DeleteItem(T item);
     }
 }
