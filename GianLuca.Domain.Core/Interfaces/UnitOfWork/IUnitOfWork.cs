@@ -6,12 +6,20 @@
 namespace GianLuca.Domain.Core.Interfaces.UnitOfWork
 {
     using System;
+    using System.Threading;
     using System.Threading.Tasks;
+    using Microsoft.EntityFrameworkCore.Storage;
 
     public interface IUnitOfWork : IDisposable
     {
-        void BeginTransaction();
-        void CommitTransaction();
-        Task CommitTransactionAsync();
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+
+        Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default);
+
+        Task<IDbContextTransaction> BeginTransactionAsync();
+
+        Task CommitTransactionAsync(IDbContextTransaction transaction);
+
+        void RollbackTransaction();
     }
 }
