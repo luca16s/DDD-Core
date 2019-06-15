@@ -5,14 +5,16 @@
 
 namespace GianLuca.Domain.Core.Interfaces.Factory
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
+    /// <summary>
+    /// Interface para criação de fábricas.
+    /// </summary>
+    /// <typeparam name="T">Entidade.</typeparam>
     public interface IFactory<out T>
     {
+        /// <summary>
+        /// Instância novo objeto.
+        /// </summary>
+        /// <returns>Objeto instÇanciado.</returns>
         T Create();
     }
 }

@@ -7,10 +7,22 @@ namespace GianLuca.Domain.Core.Entity
 {
     using System;
 
+    /// <summary>
+    /// Entidade base.
+    /// </summary>
     public class BaseEntity
     {
+        /// <summary>
+        /// Inicia uma nova instância da classe <see cref="BaseEntity"/>.
+        /// Construtor com geração automática de Identificador.
+        /// </summary>
         public BaseEntity() => this.Id = Guid.NewGuid();
 
+        /// <summary>
+        /// Inicia uma nova instância da classe <see cref="BaseEntity"/>.
+        /// Construtor com identificador passado via parametrô.
+        /// </summary>
+        /// <param name="idGuid">Identificador.</param>
         public BaseEntity(Guid idGuid)
         {
             if (idGuid != Guid.Empty)
@@ -19,6 +31,9 @@ namespace GianLuca.Domain.Core.Entity
             }
         }
 
+        /// <summary>
+        /// Obtém identificador da entidade.
+        /// </summary>
         public Guid Id { get; private set; }
     }
 }
