@@ -5,12 +5,13 @@
 
 namespace GianLuca.Domain.Core.Entity
 {
+    using Flunt.Notifications;
     using System;
 
     /// <summary>
     /// Entidade base.
     /// </summary>
-    public class BaseEntity
+    public class BaseEntity : Notifiable
     {
         /// <summary>
         /// Inicia uma nova instância da classe <see cref="BaseEntity"/>.
