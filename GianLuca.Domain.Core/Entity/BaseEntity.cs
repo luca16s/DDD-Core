@@ -5,8 +5,8 @@
 
 namespace GianLuca.Domain.Core.Entity
 {
-    using Flunt.Notifications;
     using System;
+    using Flunt.Notifications;
 
     /// <summary>
     /// Entidade base.
