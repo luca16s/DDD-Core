@@ -4,8 +4,7 @@ os:
 language: csharp
 solution: GianLuca.Domain.Core.sln
 mono: none
-dotnet: 2.0.0
-dist: trusty
+dotnet: 3.0.100
 before_install:
   - cd .travis/
   - chmod +x build.sh
