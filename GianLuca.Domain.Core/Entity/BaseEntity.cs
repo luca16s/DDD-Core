@@ -18,7 +18,7 @@ namespace GianLuca.Domain.Core.Entity
         /// Inicia uma nova instância da classe <see cref="BaseEntity"/>.
         /// Construtor com geração automática de Identificador.
         /// </summary>
-        public BaseEntity() => this.Id = Guid.NewGuid();
+        public BaseEntity() => Id = Guid.NewGuid();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseEntity"/> class.
@@ -30,7 +30,7 @@ namespace GianLuca.Domain.Core.Entity
         {
             if (idGuid != Guid.Empty)
             {
-                this.Id = idGuid;
+                Id = idGuid;
             }
         }
 

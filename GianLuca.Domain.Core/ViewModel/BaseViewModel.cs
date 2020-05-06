@@ -17,6 +17,6 @@ namespace GianLuca.Domain.Core.ViewModel
         /// Obtém identificador da ViewModel.
         /// </summary>
         [HiddenInput(DisplayValue = false)]
-        public Guid Id { get; }
+        public Guid Id { get; set; }
     }
 }
