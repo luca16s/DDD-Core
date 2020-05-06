@@ -12,12 +12,13 @@
     <Description>Library For using on my DDD Projects.</Description>
     <PackageId>GianLuca.Domain.Core</PackageId>
     <Product>GianLuca.Domain.Core</Product>
-    <AssemblyVersion>1.0.0.8</AssemblyVersion>
-    <FileVersion>1.0.0.8</FileVersion>
+    <AssemblyVersion>1.0.0.9</AssemblyVersion>
+    <FileVersion>1.0.0.9</FileVersion>
     <AssemblyName>GianLuca.Domain.Core</AssemblyName>
     <RootNamespace>GianLuca.Domain.Core</RootNamespace>
-    <Version>1.0.6</Version>
-    <LangVersion>latest</LangVersion>
+    <Version>1.0.7</Version>
+    <LangVersion>8</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -40,6 +41,7 @@
 
   <ItemGroup>
     <PackageReference Include="Flunt" Version="1.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.DataAnnotations" Version="2.2.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>

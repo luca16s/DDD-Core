@@ -6,6 +6,7 @@
 namespace GianLuca.Domain.Core.ViewModel
 {
     using System;
+    using Microsoft.AspNetCore.Mvc;
 
     /// <summary>
     /// ViewModelBase base.
@@ -15,6 +16,7 @@ namespace GianLuca.Domain.Core.ViewModel
         /// <summary>
         /// Obtém identificador da ViewModel.
         /// </summary>
-        public Guid Id { get; } = Guid.NewGuid();
+        [HiddenInput(DisplayValue = false)]
+        public Guid Id { get; }
     }
 }

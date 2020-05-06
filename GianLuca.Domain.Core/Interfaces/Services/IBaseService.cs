@@ -16,7 +16,6 @@ namespace GianLuca.Domain.Core.Interfaces.Services
     public interface IBaseService<T>
         where T : BaseEntity
     {
-
         /// <summary>
         /// Adiciona uma nova entidade no banco de dados.
         /// </summary>

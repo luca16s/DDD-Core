@@ -14,7 +14,7 @@ namespace GianLuca.Domain.Core.Interfaces.Factory
         /// <summary>
         /// Instância novo objeto.
         /// </summary>
-        /// <returns>Objeto instÇanciado.</returns>
+        /// <returns>Objeto instanciado.</returns>
         T Create();
     }
 }

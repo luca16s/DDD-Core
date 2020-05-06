@@ -14,12 +14,14 @@ namespace GianLuca.Domain.Core.Entity
     public class BaseEntity : Notifiable
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="BaseEntity"/> class.
         /// Inicia uma nova instância da classe <see cref="BaseEntity"/>.
         /// Construtor com geração automática de Identificador.
         /// </summary>
         public BaseEntity() => this.Id = Guid.NewGuid();
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="BaseEntity"/> class.
         /// Inicia uma nova instância da classe <see cref="BaseEntity"/>.
         /// Construtor com identificador passado via parametrô.
         /// </summary>
