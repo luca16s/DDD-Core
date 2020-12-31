@@ -64,7 +64,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="OpenCover" Version="4.7.922" />
-    <PackageReference Include="ReportGenerator" Version="4.8.2" />
+    <PackageReference Include="ReportGenerator" Version="4.8.4" />
   </ItemGroup>
 
 </Project>
