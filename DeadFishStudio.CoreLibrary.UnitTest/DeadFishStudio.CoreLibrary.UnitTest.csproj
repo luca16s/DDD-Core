@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+
+    <Company>DeadFish Studio</Company>
+
+    <Authors>DeadFish Studio</Authors>
+
+    <NeutralLanguage>pt-BR</NeutralLanguage>
+
+    <PackageProjectUrl>https://github.com/luca16s/Domain-Core</PackageProjectUrl>
+
+    <RepositoryUrl>https://github.com/luca16s/Domain-Core</RepositoryUrl>
+
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+
+    <Description>Core Library for DeadFish Studio Projects.</Description>
+
+    <Copyright>DeadFish Studio</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.msbuild" Version="3.0.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DeadFishStudio.CoreLibrary\DeadFishStudio.CoreLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

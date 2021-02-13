@@ -3,12 +3,13 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 // </copyright>
 
-namespace GianLuca.Domain.Core.Interfaces.UnitOfWork
+namespace DeadFishStudio.CoreLibrary
 {
+    using Microsoft.EntityFrameworkCore.Storage;
+
     using System;
     using System.Threading;
     using System.Threading.Tasks;
-    using Microsoft.EntityFrameworkCore.Storage;
 
     /// <summary>
     /// Classe para servir de interface no salvamento do banco de dados.

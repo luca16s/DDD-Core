@@ -5,15 +5,15 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace GianLuca.Domain.Core.Context
+namespace DeadFishStudio.CoreLibrary
 {
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Storage;
+
     using System;
     using System.Data;
     using System.Threading;
     using System.Threading.Tasks;
-    using GianLuca.Domain.Core.Interfaces.UnitOfWork;
-    using Microsoft.EntityFrameworkCore;
-    using Microsoft.EntityFrameworkCore.Storage;
 
     /// <summary>
     /// Base Context Class.
