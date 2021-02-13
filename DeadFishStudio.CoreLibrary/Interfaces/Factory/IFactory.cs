@@ -3,18 +3,15 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 // </copyright>
 
-namespace GianLuca.Domain.Core.Interfaces.Factory
+namespace DeadFishStudio.CoreLibrary
 {
     /// <summary>
     /// Interface para criação de fábricas.
     /// </summary>
-    /// <typeparam name="T">Entidade.</typeparam>
-    public interface IFactory<out T>
+    /// <typeparam name="T">Tipo que define entidade a ser instanciada.</typeparam>
+    /// <typeparam name="TReturn">Entidade Instanciada.</typeparam>
+    public interface IFactory<T, out TReturn>
     {
-        /// <summary>
-        /// Instância novo objeto.
-        /// </summary>
-        /// <returns>Objeto instanciado.</returns>
-        T Create();
+        TReturn Create(T type);
     }
 }

@@ -1,20 +1,19 @@
-﻿// <copyright file="IBaseRepositoryAsync.cs" company="Gian Luca da Silva Figueiredo">
+﻿// <copyright file="IBaseServiceAsync.cs" company="Gian Luca da Silva Figueiredo">
 // Copyright (c) Gian Luca da Silva Figueiredo. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 // </copyright>
 
-namespace GianLuca.Domain.Core.Interfaces.Repository
+namespace DeadFishStudio.CoreLibrary
 {
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using GianLuca.Domain.Core.Entity;
 
     /// <summary>
-    /// Interface assíncrona para salvamento no banco de dados.
+    /// Interface assíncrona de serviço.
     /// </summary>
     /// <typeparam name="T">Entidade que será salva.</typeparam>
-    public interface IBaseRepositoryAsync<T>
+    public interface IBaseServiceAsync<T>
         where T : BaseEntity
     {
         /// <summary>
@@ -38,15 +37,15 @@ namespace GianLuca.Domain.Core.Interfaces.Repository
         Task<IEnumerable<T>> GetAllItemsAsync();
 
         /// <summary>
-        /// Atualiza uma entidade com base em um identificador passado.
+        /// Atualiza uma entidade com base em um identificador passado de forma assíncrona.
         /// </summary>
         /// <param name="id">Identificador da entidade.</param>
         /// <param name="item">Entidade a ser atualizada.</param>
-        /// <returns>Entidade atualizado.</returns>
+        /// <returns>Entidade atualizada.</returns>
         T UpdateItem(Guid id, T item);
 
         /// <summary>
-        /// Deleta uma entidade no banco de dados.
+        /// Deleta uma entidade no banco de dados de forma assíncrona.
         /// </summary>
         /// <param name="item">Entidade a ser deletada.</param>
         void DeleteItem(T item);

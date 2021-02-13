@@ -3,10 +3,11 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 // </copyright>
 
-namespace GianLuca.Domain.Core.Entity
+namespace DeadFishStudio.CoreLibrary
 {
-    using System;
     using Flunt.Notifications;
+
+    using System;
 
     /// <summary>
     /// Entidade base.

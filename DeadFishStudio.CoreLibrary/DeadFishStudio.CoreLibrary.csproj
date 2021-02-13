@@ -2,24 +2,27 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Authors>Gian Luca da Silva Figueiredo</Authors>
-    <Company>Gian Luca da Silva Figueiredo</Company>
-    <Copyright>Gian Luca da Silva Figueiredo</Copyright>
+    <Authors>DeadFish Studio</Authors>
+    <Company>DeadFish Studio</Company>
+    <Copyright>DeadFish Studio</Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/luca16s/Domain-Core</PackageProjectUrl>
     <RepositoryUrl>https://github.com/luca16s/Domain-Core</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>Library For using on my DDD Projects.</Description>
-    <PackageId>GianLuca.Domain.Core</PackageId>
-    <Product>GianLuca.Domain.Core</Product>
+    <Description>Core Library for DeadFish Studio Projects.</Description>
+    <PackageId>DeadFishStudio.CoreLibrary</PackageId>
+    <Product>DeadFishStudio.CoreLibrary</Product>
     <AssemblyVersion>1.0.0.10</AssemblyVersion>
     <FileVersion>1.0.0.10</FileVersion>
-    <AssemblyName>GianLuca.Domain.Core</AssemblyName>
-    <RootNamespace>GianLuca.Domain.Core</RootNamespace>
+    <AssemblyName>DeadFishStudio.Core.Library</AssemblyName>
+    <RootNamespace>DeadFishStudio.Core.Library</RootNamespace>
     <Version>1.0.8</Version>
     <LangVersion>8</LangVersion>
     <Nullable>enable</Nullable>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <NeutralLanguage>pt-BR</NeutralLanguage>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -51,20 +54,20 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="5.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.1">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="5.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.7" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.7" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="OpenCover" Version="4.7.922" />
-    <PackageReference Include="ReportGenerator" Version="4.8.2" />
+    <PackageReference Include="ReportGenerator" Version="4.8.5" />
   </ItemGroup>
 
 </Project>

@@ -3,10 +3,11 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 // </copyright>
 
-namespace GianLuca.Domain.Core.ViewModel
+namespace DeadFishStudio.CoreLibrary
 {
-    using System;
     using Microsoft.AspNetCore.Mvc;
+
+    using System;
 
     /// <summary>
     /// ViewModelBase base.

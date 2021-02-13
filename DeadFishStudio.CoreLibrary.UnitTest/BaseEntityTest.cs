@@ -1,9 +1,9 @@
-using System;
-using GianLuca.Domain.Core.Entity;
-using Xunit;
-
-namespace GianLuca.Domain.Core.UnitTest
+namespace DeadFishStudio.CoreLibrary.UnitTest
 {
+    using System;
+
+    using Xunit;
+
     public class BaseEntityTest
     {
         [Fact]
