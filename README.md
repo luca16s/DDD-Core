@@ -2,4 +2,4 @@
 
 Build Status|CodCov|CodeFactor|
 ------------|------|----------|
-[![Build Status](https://travis-ci.org/luca16s/Domain-Core.svg?branch=master)](https://travis-ci.org/luca16s/Domain-Core)|[![codecov](https://codecov.io/gh/luca16s/Domain-Core/branch/master/graph/badge.svg)](https://codecov.io/gh/luca16s/Domain-Core)|[![CodeFactor](https://www.codefactor.io/repository/github/luca16s/domain-core/badge)](https://www.codefactor.io/repository/github/luca16s/domain-core)
+[![Build Status](https://travis-ci.org/luca16s/Domain-Core.svg?branch=master)](https://travis-ci.org/luca16s/Domain-Core)|[![codecov](https://codecov.io/gh/luca16s/DeadFishStudio.CoreLibrary/branch/main/graph/badge.svg?token=SngSHcv2wt)](https://codecov.io/gh/luca16s/DeadFishStudio.CoreLibrary)|[![CodeFactor](https://www.codefactor.io/repository/github/luca16s/deadfishstudio.corelibrary/badge)](https://www.codefactor.io/repository/github/luca16s/deadfishstudio.corelibrary)
