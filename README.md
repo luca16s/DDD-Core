@@ -1,4 +1,4 @@
-# Base Lib for any project that will be using DDD.
+Base lib for using on my projects.
 
 Build Status|CodCov|CodeFactor|
 ------------|------|----------|
