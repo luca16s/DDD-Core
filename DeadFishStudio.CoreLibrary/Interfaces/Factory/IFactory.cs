@@ -1,5 +1,5 @@
-﻿// <copyright file="IFactory.cs" company="Gian Luca da Silva Figueiredo">
-// Copyright (c) Gian Luca da Silva Figueiredo. All rights reserved.
+﻿// <copyright file="IFactory.cs" company="DeadFish Studio">
+// Copyright (c) DeadFish Studio. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 // </copyright>
 
@@ -12,6 +12,11 @@ namespace DeadFishStudio.CoreLibrary
     /// <typeparam name="TReturn">Entidade Instanciada.</typeparam>
     public interface IFactory<T, out TReturn>
     {
+        /// <summary>
+        /// Instancia um tipo concreto.
+        /// </summary>
+        /// <param name="type">Tipo a ser instanciado.</param>
+        /// <returns>Tipo concreto.</returns>
         TReturn Create(T type);
     }
 }

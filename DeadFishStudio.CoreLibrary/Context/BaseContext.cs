@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="BaseContext.cs" company="Gian Luca da Silva Figueiredo">
-// Copyright (c) Gian Luca da Silva Figueiredo. All rights reserved.
+// <copyright file="BaseContext.cs" company="DeadFish Studio">
+// Copyright (c) DeadFish Studio. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -22,8 +22,15 @@ namespace DeadFishStudio.CoreLibrary
     {
         private IDbContextTransaction? currentTransaction;
 
+        /// <summary>
+        /// Obtém a transação atual.
+        /// </summary>
+        /// <returns>Transação atual.</returns>
         public IDbContextTransaction? GetCurrentTransaction() => currentTransaction;
 
+        /// <summary>
+        /// Indica se existe transação.
+        /// </summary>
         public bool HasActiveTransaction => currentTransaction != null;
 
         /// <summary>
@@ -31,12 +38,16 @@ namespace DeadFishStudio.CoreLibrary
         /// </summary>
         public BaseContext()
         {
-            Database?.EnsureCreated();
+            _ = (Database?.EnsureCreated());
         }
 
+        /// <summary>
+        /// Inicia uma nova instância da classe <see cref="BaseContext"/>.
+        /// </summary>
+        /// <param name="options">Opções do DbContext.</param>
         public BaseContext(DbContextOptions options) : base(options)
         {
-            Database?.EnsureCreated();
+            _ = (Database?.EnsureCreated());
         }
 
         /// <inheritdoc/>
@@ -58,7 +69,7 @@ namespace DeadFishStudio.CoreLibrary
                 return null;
             }
 
-            await Database.EnsureCreatedAsync().ConfigureAwait(true);
+            _ = await Database.EnsureCreatedAsync().ConfigureAwait(true);
 
             currentTransaction = await Database.BeginTransactionAsync(IsolationLevel.ReadCommitted).ConfigureAwait(true);
             return currentTransaction;
