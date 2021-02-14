@@ -1,5 +1,5 @@
-﻿// <copyright file="BaseEntity.cs" company="Gian Luca da Silva Figueiredo">
-// Copyright (c) Gian Luca da Silva Figueiredo. All rights reserved.
+﻿// <copyright file="BaseEntity.cs" company="DeadFish Studio">
+// Copyright (c) DeadFish Studio. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 // </copyright>
 
