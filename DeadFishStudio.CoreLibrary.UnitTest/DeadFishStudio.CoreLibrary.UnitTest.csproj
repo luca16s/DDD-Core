@@ -11,9 +11,9 @@
 
     <NeutralLanguage>pt-BR</NeutralLanguage>
 
-    <PackageProjectUrl>https://github.com/luca16s/Domain-Core</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/luca16s/DeadFishStudio.CoreLibrary</PackageProjectUrl>
 
-    <RepositoryUrl>https://github.com/luca16s/Domain-Core</RepositoryUrl>
+    <RepositoryUrl>https://github.com/luca16s/DeadFishStudio.CoreLibrary</RepositoryUrl>
 
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
 

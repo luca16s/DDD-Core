@@ -5,14 +5,12 @@
 
 namespace DeadFishStudio.CoreLibrary
 {
-    using Flunt.Notifications;
-
     using System;
 
     /// <summary>
     /// Entidade base.
     /// </summary>
-    public class BaseEntity : Notifiable
+    public class BaseEntity
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseEntity"/> class.
