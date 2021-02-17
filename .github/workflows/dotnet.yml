@@ -1,31 +1,28 @@
 name: DeadFishStudio.CoreLibrary
-
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
 jobs:
   build:
     runs-on: windows-latest
-    env:
-      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - name: Install .NET Core
+    - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Restore dependencies
+    - name: Restaurando pacotes
       run: dotnet restore
-    - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@2008f912f56e61277eefaac6d1888b750582aa16
-    - name: Execute unit tests
+    - name: Construindo projetos
+      run: dotnet build -c Release
+    - name: Rodando testes.
       run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput='../cobertura.xml'
-    - uses: codecov/codecov-action@v1
+    - name: Enviando dados de cobertura
+      uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         file: ./cobertura.xml
@@ -33,3 +30,9 @@ jobs:
         name: codecov-umbrella
         fail_ci_if_error: true
         verbose: true
+    - name: Criando pacote
+      run: dotnet pack -c Release -o .\out
+    - name: Push no NuGet
+      run: |
+        cd out
+        dotnet nuget push *.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/luca16s/index.json" --skip-duplicate
