@@ -25,28 +25,20 @@ namespace DeadFishStudio.CoreLibrary.Extensions
         /// <returns>Restorna a descrição do enumerador em formato texto.</returns>
         public static string Description(this Enum value)
         {
-            if (value is not null)
+            var field = value
+                      .GetType()
+                      .GetField(value.ToString() ?? string.Empty);
+
+            object[]? attributes = field?.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+            if (attributes?.Length == 0)
             {
-                var field = value
-                   .GetType()
-                   .GetField(value.ToString() ?? string.Empty);
+                TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
 
-                if (field is not null)
-                {
-                    object[] attributes = field.GetCustomAttributes(typeof(DescriptionAttribute), false);
-
-                    if (attributes.Length == 0)
-                    {
-                        TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
-
-                        return ti.ToTitleCase(ti.ToLower(value.ToString().Replace("_", " ", StringComparison.InvariantCultureIgnoreCase) ?? string.Empty));
-                    }
-
-                    return (attributes?.First() as DescriptionAttribute)?.Description ?? string.Empty;
-                }
+                return ti.ToTitleCase(ti.ToLower(value.ToString().Replace("_", " ", StringComparison.InvariantCultureIgnoreCase) ?? string.Empty));
             }
 
-            return string.Empty;
+            return (attributes?.First() as DescriptionAttribute)?.Description ?? string.Empty;
         }
 
         /// <summary>
