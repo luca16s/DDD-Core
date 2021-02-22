@@ -20,24 +20,13 @@ namespace DeadFishStudio.CoreLibrary.Utils.Extensions
         /// <param name="value">Texto do enum.</param>
         /// <returns>Retorna item do enum.</returns>
         /// <exception cref="ArgumentException">Item não encontrado.</exception>
-        public static T GetEnumValueFromDescription<T>(this string value) where T : Enum
+        public static T? GetEnumValueFromDescription<T>(this string value) where T : Enum
         {
             foreach (FieldInfo field in typeof(T).GetFields())
             {
-                var fieldValue = (T?)field.GetValue(null);
-
-                if (fieldValue is not null)
+                if (Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) is DescriptionAttribute)
                 {
-                    if (Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) is DescriptionAttribute attribute)
-                    {
-                        if (attribute.Description == value)
-                            return fieldValue;
-                    }
-                    else
-                    {
-                        if (field.Name == value)
-                            return fieldValue;
-                    }
+                    return (T?)field.GetValue(value);
                 }
             }
 
