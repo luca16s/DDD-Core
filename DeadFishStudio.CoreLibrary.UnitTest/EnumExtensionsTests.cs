@@ -1,13 +1,12 @@
-﻿namespace GameSaveManager.Tests.Core
+﻿namespace DeadFishStudio.CoreLibrary.UnitTest
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-
     using DeadFishStudio.CoreLibrary;
+    using DeadFishStudio.CoreLibrary.Exceptions;
     using DeadFishStudio.CoreLibrary.Extensions;
 
     using FluentAssertions;
+
+    using System.Collections.Generic;
 
     using Xunit;
 
@@ -16,7 +15,7 @@
         [Fact]
         public void DescriptionShouldReturnValueOfDescriptionAnnotation()
         {
-            string description = ETesteEnum.TESTE_1.Description();
+            string description = EOKEnum.TESTE_1.Description();
 
             _ = description.Should().Be("TESTE 1");
         }
@@ -24,9 +23,10 @@
         [Fact]
         public void DescriptionShouldReturnEnumWithUnderscoreReplaced()
         {
-            string description = ETesteEnum.TESTE_3.Description();
-
-            _ = description.Should().Be("Teste 3");
+            _ = this.Invoking(g => EErroEnum.TESTE_3.Description())
+                .Should()
+                .Throw<EnumDescriptionNotFoundException>()
+                .WithMessage("Enum informado não contém descrição.");
         }
 
         [Fact]
@@ -34,26 +34,17 @@
         {
             var listaModelo = new EnumModel[]
             {
-                new EnumModel { Value = ETesteEnum.TESTE_1, Description ="TESTE 1" },
-                new EnumModel { Value = ETesteEnum.TESTE_2, Description ="TESTE 2" },
-                new EnumModel { Value = ETesteEnum.TESTE_3, Description ="Teste 3" },
+                new EnumModel { Value = EOKEnum.TESTE_1, Description ="TESTE 1" },
+                new EnumModel { Value = EOKEnum.TESTE_2, Description ="TESTE 2" },
+                new EnumModel { Value = EOKEnum.TESTE_3, Description ="TESTE 3" },
             };
 
-            IEnumerable<EnumModel> retorno = ETesteEnum.TESTE_1.GetAllValuesAndDescriptions();
+            IEnumerable<EnumModel> retorno = EOKEnum.TESTE_1.GetAllValuesAndDescriptions();
 
             _ = retorno.Should().NotBeEmpty()
                 .And.HaveCount(3)
                 .And.OnlyHaveUniqueItems()
                 .And.BeEquivalentTo(listaModelo);
         }
-    }
-
-    public enum ETesteEnum
-    {
-        [Description("TESTE 1")]
-        TESTE_1,
-        [Description("TESTE 2")]
-        TESTE_2,
-        TESTE_3
     }
 }
