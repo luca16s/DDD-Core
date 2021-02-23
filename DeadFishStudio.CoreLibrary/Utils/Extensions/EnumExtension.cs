@@ -13,6 +13,7 @@ namespace DeadFishStudio.CoreLibrary.Extensions
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Linq;
+    using System.Reflection;
 
     /// <summary>
     /// Classe de extensão para operações com enumeradores.
@@ -27,14 +28,13 @@ namespace DeadFishStudio.CoreLibrary.Extensions
         /// <exception cref="EnumDescriptionNotFoundException">Descrição não encontrada.</exception>
         public static string Description(this Enum value)
         {
-            var field = value
-                ?.GetType()
-                ?.GetField(value?.ToString() ?? string.Empty);
-
-            if (field == null)
+            if (value == null)
                 return string.Empty;
 
-            object[] attributes = field.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            var attributes = value
+                .GetType()
+                .GetField(value.ToString())
+                ?.GetCustomAttributes(typeof(DescriptionAttribute), false) ?? Array.Empty<Array>();
 
             if (attributes.Length == 0
                 || attributes.First() is not DescriptionAttribute description)
