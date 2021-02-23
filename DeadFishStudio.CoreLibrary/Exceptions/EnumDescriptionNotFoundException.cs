@@ -15,9 +15,9 @@ namespace DeadFishStudio.CoreLibrary.Exceptions
             : base(DefaultMessage) { }
 
         public EnumDescriptionNotFoundException(string message)
-            : base(message) { }
+            : base($"{DefaultMessage}\n - {message}") { }
 
         public EnumDescriptionNotFoundException(string message, Exception inner)
-            : base(message, inner) { }
+            : base($"{DefaultMessage}\n - {message}", inner) { }
     }
 }

@@ -7,7 +7,7 @@
 
     using Xunit;
 
-    public class StringExtensionsTests
+    public class StringExtensions_Tests
     {
         [Fact]
         public void ShouldReturnEnumValueFromText()

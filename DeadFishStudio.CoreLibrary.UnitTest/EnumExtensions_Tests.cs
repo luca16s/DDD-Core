@@ -10,7 +10,7 @@
 
     using Xunit;
 
-    public class EnumExtensionsTests
+    public class EnumExtensions_Tests
     {
         [Fact]
         public void DescriptionShouldReturnValueOfDescriptionAnnotation()
