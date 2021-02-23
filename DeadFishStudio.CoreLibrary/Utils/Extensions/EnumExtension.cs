@@ -28,17 +28,19 @@ namespace DeadFishStudio.CoreLibrary.Extensions
         public static string Description(this Enum value)
         {
             var field = value
-                      .GetType()
-                      .GetField(value.ToString());
+                ?.GetType()
+                ?.GetField(value?.ToString() ?? string.Empty);
 
-            object[]? attributes = field?.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            if (field == null)
+                return string.Empty;
 
-            if (attributes?.Length == 0)
-            {
+            object[] attributes = field.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+            if (attributes.Length == 0
+                || attributes.First() is not DescriptionAttribute description)
                 throw new EnumDescriptionNotFoundException();
-            }
 
-            return (attributes?.First() as DescriptionAttribute)?.Description ?? string.Empty;
+            return description.Description;
         }
 
         /// <summary>
