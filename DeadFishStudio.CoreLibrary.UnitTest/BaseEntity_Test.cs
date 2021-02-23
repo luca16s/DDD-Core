@@ -10,7 +10,7 @@ namespace DeadFishStudio.CoreLibrary.UnitTest
 
     using Xunit;
 
-    public class BaseEntityTest
+    public class BaseEntity_Test
     {
         [Fact]
         public void ShouldNotHaveErrorsIfGuidIsNotEmpty()
