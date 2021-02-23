@@ -26,14 +26,9 @@ namespace DeadFishStudio.CoreLibrary.Utils.Extensions
         {
             foreach (FieldInfo field in typeof(T).GetFields())
             {
-                if (Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute))
-                    is DescriptionAttribute descriptionAttribute)
-                {
+                if (Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) is DescriptionAttribute descriptionAttribute)
                     if (descriptionAttribute.Description.Equals(value))
-                    {
                         return (T?)field.GetValue(value);
-                    }
-                }
             }
 
             throw new EnumItemNotFoundException(value);

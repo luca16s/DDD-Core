@@ -6,6 +6,7 @@
 
     using FluentAssertions;
 
+    using System;
     using System.Collections.Generic;
 
     using Xunit;
@@ -18,6 +19,14 @@
             string description = EOKEnum.TESTE_1.Description();
 
             _ = description.Should().Be("TESTE 1");
+        }
+
+        [Fact]
+        public void DescriptionShouldStringEmptyWhenNull()
+        {
+            string description = default(Enum).Description();
+
+            _ = description.Should().Be(string.Empty);
         }
 
         [Fact]
