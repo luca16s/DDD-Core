@@ -9,10 +9,10 @@ namespace DeadFishStudio.CoreLibrary.Exceptions
 
     public class EnumDescriptionNotFoundException : Exception
     {
-        private const string MessageDescriptionNotEncountered = "Enum informado não contém descrição.";
+        private const string DefaultMessage = "Enum informado não contém descrição.";
 
         public EnumDescriptionNotFoundException()
-            : base(MessageDescriptionNotEncountered) { }
+            : base(DefaultMessage) { }
 
         public EnumDescriptionNotFoundException(string message)
             : base(message) { }

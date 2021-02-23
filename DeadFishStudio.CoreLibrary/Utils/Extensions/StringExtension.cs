@@ -7,6 +7,8 @@
 
 namespace DeadFishStudio.CoreLibrary.Utils.Extensions
 {
+    using DeadFishStudio.CoreLibrary.Exceptions;
+
     using System;
     using System.ComponentModel;
     using System.Reflection;
@@ -24,13 +26,17 @@ namespace DeadFishStudio.CoreLibrary.Utils.Extensions
         {
             foreach (FieldInfo field in typeof(T).GetFields())
             {
-                if (Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) is DescriptionAttribute)
+                if (Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute))
+                    is DescriptionAttribute descriptionAttribute)
                 {
-                    return (T?)field.GetValue(value);
+                    if (descriptionAttribute.Description.Equals(value))
+                    {
+                        return (T?)field.GetValue(value);
+                    }
                 }
             }
 
-            throw new ArgumentException("Item não encontrado no enumerador.", nameof(value));
+            throw new EnumItemNotFoundException(value);
         }
     }
 }
