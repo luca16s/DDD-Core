@@ -30,14 +30,10 @@ namespace DeadFishStudio.CoreLibrary.Extensions
             if (value == null)
                 return string.Empty;
 
-            var field = value
+            var attributes = value
                 .GetType()
-                .GetField(value.ToString());
-
-            if (field == null)
-                return string.Empty;
-
-            object[] attributes = field.GetCustomAttributes(typeof(DescriptionAttribute), false);
+                .GetField(value.ToString())
+                ?.GetCustomAttributes(typeof(DescriptionAttribute), false) ?? Array.Empty<Array>();
 
             if (attributes.Length == 0
                 || attributes.First() is not DescriptionAttribute description)
