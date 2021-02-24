@@ -30,7 +30,7 @@
         }
 
         [Fact]
-        public void DescriptionShouldReturnEnumWithUnderscoreReplaced()
+        public void DescriptionShouldThrowExceptionWhenNoDescriptionIsProvided()
         {
             _ = this.Invoking(g => EErroEnum.TESTE_3.Description())
                 .Should()
