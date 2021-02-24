@@ -27,19 +27,18 @@ namespace DeadFishStudio.CoreLibrary.Extensions
         /// <exception cref="EnumDescriptionNotFoundException">Descrição não encontrada.</exception>
         public static string Description(this Enum value)
         {
-            if (value == null)
-                return string.Empty;
+            object[]? attributes = value
+                ?.GetType()
+                ?.GetField(value.ToString())
+                ?.GetCustomAttributes(typeof(DescriptionAttribute), false)
+                ?? Array.Empty<Array>();
 
-            var attributes = value
-                .GetType()
-                .GetField(value.ToString())
-                ?.GetCustomAttributes(typeof(DescriptionAttribute), false) ?? Array.Empty<Array>();
+            if (attributes != null
+                && attributes.Length > 0
+                && attributes?.First() is DescriptionAttribute description)
+                return description.Description;
 
-            if (attributes.Length == 0
-                || attributes.First() is not DescriptionAttribute description)
-                throw new EnumDescriptionNotFoundException();
-
-            return description.Description;
+            throw new EnumDescriptionNotFoundException();
         }
 
         /// <summary>

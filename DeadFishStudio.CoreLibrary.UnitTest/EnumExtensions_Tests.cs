@@ -24,9 +24,10 @@
         [Fact]
         public void DescriptionShouldStringEmptyWhenNull()
         {
-            string description = default(Enum).Description();
-
-            _ = description.Should().Be(string.Empty);
+            _ = this.Invoking(g => default(Enum).Description())
+                 .Should()
+                 .Throw<EnumDescriptionNotFoundException>()
+                 .WithMessage("Enum informado não contém descrição.");
         }
 
         [Fact]
