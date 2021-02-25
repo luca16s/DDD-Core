@@ -66,7 +66,7 @@ namespace DeadFishStudio.CoreLibrary.Utils
         /// <param name="path">Endereço no sistema de arquivos.</param>
         /// <returns>Se arquivo ou pasta foi apagado com sucesso.</returns>
         /// <exception cref="PlatformNotSupportedException">Sistema operacional não suportado.</exception>
-        public static bool DeleteCreatedFile(string path)
+        public static bool DeleteFile(string path)
         {
             MAX_DELETE_ATTEMPTS++;
 
@@ -82,7 +82,7 @@ namespace DeadFishStudio.CoreLibrary.Utils
             }
 
             return !File.Exists(path)
-                || DeleteCreatedFile(path)
+                || DeleteFile(path)
                 || MAX_DELETE_ATTEMPTS == 10;
         }
     }
