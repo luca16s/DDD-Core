@@ -1,4 +1,4 @@
-name: DeadFishStudio.CoreLibrary
+name: DeadFishStudio.CoreLibraryCI
 on:
   push:
     branches: [ main ]
@@ -30,9 +30,3 @@ jobs:
         name: codecov-umbrella
         fail_ci_if_error: true
         verbose: true
-    - name: Criando pacote
-      run: dotnet pack -c Release -o .\out
-    - name: Push no NuGet
-      run: |
-        cd out
-        dotnet nuget push *.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/luca16s/index.json" --skip-duplicate
