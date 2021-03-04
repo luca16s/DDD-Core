@@ -19,7 +19,7 @@ jobs:
       run: dotnet restore
     - name: Construindo projetos
       run: dotnet build -c Release
-    - name: Rodando testes.
+    - name: Rodando testes
       run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput='../cobertura.xml'
     - name: Enviando dados de cobertura
       uses: codecov/codecov-action@v1
