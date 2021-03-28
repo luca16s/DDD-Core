@@ -1,4 +1,4 @@
-# Biblioteca para utilizações nos projetos da DeadFish Studio
+# Biblioteca para utilizações nos projetos da Îakaré Software'oka
 
 Build Status|Cobertura|Qualidade de Código|Último Release|
 ------------|------|----------|--------------|
