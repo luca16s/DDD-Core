@@ -14,7 +14,7 @@
         {
             string texto = "TESTE 1";
 
-            var result = texto.GetEnumValueFromDescription<EOKEnum>();
+            EOKEnum result = texto.GetEnumValueFromDescription<EOKEnum>();
 
             _ = result.Should().Be(EOKEnum.TESTE_1);
         }

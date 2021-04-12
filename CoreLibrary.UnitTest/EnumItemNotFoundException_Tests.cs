@@ -1,13 +1,10 @@
 ﻿namespace CoreLibrary.UnitTest
 {
-    using CoreLibrary;
     using CoreLibrary.Exceptions;
-    using CoreLibrary.Extensions;
 
     using FluentAssertions;
 
     using System;
-    using System.Collections.Generic;
 
     using Xunit;
 

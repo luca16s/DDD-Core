@@ -42,7 +42,7 @@
         [Fact]
         public void GetAllValuesAndDescriptionsShouldReturnListOfItems()
         {
-            var listaModelo = new EnumModel[]
+            EnumModel[] listaModelo = new EnumModel[]
             {
                 new EnumModel { Value = EOKEnum.TESTE_1, Description ="TESTE 1" },
                 new EnumModel { Value = EOKEnum.TESTE_2, Description ="TESTE 2" },

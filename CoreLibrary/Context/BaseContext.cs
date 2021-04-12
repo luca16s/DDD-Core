@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="BaseContext.cs" company="DeadFish Studio">
-// Copyright (c) DeadFish Studio. All rights reserved.
+// <copyright file="BaseContext.cs" company="Îakaré Software'oka">
+// Copyright (c) Îakaré Software'oka. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 // </copyright>
 // -----------------------------------------------------------------------
@@ -90,7 +90,7 @@ namespace CoreLibrary
 
             try
             {
-                var isObjectSavedAsync = await SaveEntitiesAsync().ConfigureAwait(true);
+                bool isObjectSavedAsync = await SaveEntitiesAsync().ConfigureAwait(true);
 
                 if (isObjectSavedAsync)
                 {

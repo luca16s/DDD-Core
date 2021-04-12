@@ -16,10 +16,10 @@ namespace CoreLibrary.UnitTest
         public void ShouldNotHaveErrorsIfGuidIsNotEmpty()
         {
             //Arrange
-            var entity = new BaseEntity();
+            BaseEntity entity = new BaseEntity();
 
             //Act
-            var result = new BaseEntityValidations().TestValidate(entity);
+            TestValidationResult<BaseEntity> result = new BaseEntityValidations().TestValidate(entity);
 
             //Verify
             result.ShouldNotHaveValidationErrorFor(x => x.Id);
@@ -29,11 +29,11 @@ namespace CoreLibrary.UnitTest
         public void ShouldNotHaveErrorsIfGuidIsPassedOnConstructor()
         {
             //Arrange
-            var generatedGuid = Guid.NewGuid();
-            var entity = new BaseEntity(generatedGuid);
+            Guid generatedGuid = Guid.NewGuid();
+            BaseEntity entity = new BaseEntity(generatedGuid);
 
             //Act
-            var result = new BaseEntityValidations().TestValidate(entity);
+            TestValidationResult<BaseEntity> result = new BaseEntityValidations().TestValidate(entity);
 
             //Verify
             result.ShouldNotHaveValidationErrorFor(x => x.Id);
@@ -44,10 +44,10 @@ namespace CoreLibrary.UnitTest
         public void CheckIfGuidPassedIsEqual()
         {
             //Arrange
-            var generatedGuid = Guid.NewGuid();
+            Guid generatedGuid = Guid.NewGuid();
 
             //Act
-            var entity = new BaseEntity(generatedGuid);
+            BaseEntity entity = new BaseEntity(generatedGuid);
 
             //Verify
             _ = generatedGuid.Should().Be(entity.Id);

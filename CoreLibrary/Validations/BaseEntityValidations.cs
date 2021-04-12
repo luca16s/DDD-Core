@@ -1,5 +1,5 @@
-﻿// <copyright file="BaseEntityValidations.cs" company="DeadFish Studio">
-// Copyright (c) DeadFish Studio. All rights reserved.
+﻿// <copyright file="BaseEntityValidations.cs" company="Îakaré Software'oka">
+// Copyright (c) Îakaré Software'oka. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 // </copyright>
 
