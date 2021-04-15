@@ -24,12 +24,12 @@
         public Window MainWindow
                     => Application.Current.MainWindow;
 
-        public Window GetWindow(string key)
+        public Window GetWindow(string pageKey)
         {
             foreach (Window window in Application.Current.Windows)
             {
                 object dataContext = window.DataContext;
-                if (dataContext?.GetType().FullName == key)
+                if (dataContext?.GetType().FullName == pageKey)
                 {
                     return window;
                 }
@@ -38,20 +38,20 @@
             return null;
         }
 
-        public bool? OpenInDialog(string key, object parameter = null)
+        public bool? OpenInDialog(string pageKey, object parameter = null)
         {
             var shellWindow = _serviceProvider.GetService(typeof(IShellDialogWindow)) as Window;
             Frame frame = ((IShellDialogWindow)shellWindow).GetDialogFrame();
             frame.Navigated += OnNavigated;
             shellWindow.Closed += OnWindowClosed;
-            Page page = _pageService.GetPage(key);
+            Page page = _pageService.GetPage(pageKey);
             bool navigated = frame.Navigate(page, parameter);
             return shellWindow.ShowDialog();
         }
 
-        public void OpenInNewWindow(string key, object parameter = null)
+        public void OpenInNewWindow(string pageKey, object parameter = null)
         {
-            Window window = GetWindow(key);
+            Window window = GetWindow(pageKey);
             if (window != null)
             {
                 _ = window.Activate();
@@ -70,7 +70,7 @@
                 };
 
                 window.Content = frame;
-                Page page = _pageService.GetPage(key);
+                Page page = _pageService.GetPage(pageKey);
                 window.Closed += OnWindowClosed;
                 window.Show();
                 frame.Navigated += OnNavigated;

@@ -1,6 +1,6 @@
 ﻿using CoreLibrary.Exceptions;
-using CoreLibrary.Extensions;
 using CoreLibrary.Models;
+using CoreLibrary.Utils.Extensions;
 
 using FluentAssertions;
 
@@ -11,12 +11,12 @@ using Xunit;
 
 namespace CoreLibrary.UnitTest
 {
-    public class EnumExtensions_Tests
+    public class EnumExtensionsTests
     {
         [Fact]
         public void DescriptionShouldReturnValueOfDescriptionAnnotation()
         {
-            string description = EOKEnum.TESTE_1.Description();
+            string description = EOK.TESTE1.Description();
 
             _ = description.Should().Be("TESTE 1");
         }
@@ -33,7 +33,7 @@ namespace CoreLibrary.UnitTest
         [Fact]
         public void DescriptionShouldThrowExceptionWhenNoDescriptionIsProvided()
         {
-            _ = this.Invoking(g => EErroEnum.TESTE_3.Description())
+            _ = this.Invoking(g => EError.TESTE3.Description())
                 .Should()
                 .Throw<EnumDescriptionNotFoundException>()
                 .WithMessage("Enum informado não contém descrição.");
@@ -44,12 +44,12 @@ namespace CoreLibrary.UnitTest
         {
             EnumModel[] listaModelo = new EnumModel[]
             {
-                new EnumModel { Value = EOKEnum.TESTE_1, Description ="TESTE 1" },
-                new EnumModel { Value = EOKEnum.TESTE_2, Description ="TESTE 2" },
-                new EnumModel { Value = EOKEnum.TESTE_3, Description ="TESTE 3" },
+                new EnumModel { Value = EOK.TESTE1, Description ="TESTE 1" },
+                new EnumModel { Value = EOK.TESTE2, Description ="TESTE 2" },
+                new EnumModel { Value = EOK.TESTE3, Description ="TESTE 3" },
             };
 
-            IEnumerable<EnumModel> retorno = EOKEnum.TESTE_1.GetAllValuesAndDescriptions();
+            IEnumerable<EnumModel> retorno = EOK.TESTE1.GetAllValuesAndDescriptions();
 
             _ = retorno.Should().NotBeEmpty()
                 .And.HaveCount(3)

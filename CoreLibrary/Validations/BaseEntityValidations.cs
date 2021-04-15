@@ -13,7 +13,7 @@ namespace CoreLibrary.Validations
     {
         public BaseEntityValidations()
         {
-            RuleFor(baseEntity => baseEntity.Id)
+            _ = RuleFor(baseEntity => baseEntity.Id)
                 .NotEmpty()
                 .NotNull();
         }

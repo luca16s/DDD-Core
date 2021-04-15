@@ -44,6 +44,13 @@
 
         public event EventHandler LoggedOut;
 
+        public static bool IsAuthorized()
+        {
+            // TODO WTS: You can also add extra authorization checks here. i.e.: Checks permisions
+            // of _authenticationResult.Account.Username in a database.
+            return true;
+        }
+
         public async Task<bool> AcquireTokenSilentAsync()
         {
             return await AcquireTokenSilentAsync(_graphScopes);
@@ -121,13 +128,6 @@
                                                     .Build();
 
             ConfigureCache();
-        }
-
-        public bool IsAuthorized()
-        {
-            // TODO WTS: You can also add extra authorization checks here. i.e.: Checks permisions
-            // of _authenticationResult.Account.Username in a database.
-            return true;
         }
 
         public bool IsLoggedIn()

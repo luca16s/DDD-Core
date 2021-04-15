@@ -7,16 +7,16 @@ using Xunit;
 
 namespace CoreLibrary.UnitTest
 {
-    public class StringExtensions_Tests
+    public class StringExtensionsTests
     {
         [Fact]
         public void ShouldReturnEnumValueFromText()
         {
             string texto = "TESTE 1";
 
-            EOKEnum result = texto.GetEnumValueFromDescription<EOKEnum>();
+            EOK result = texto.GetEnumValueFromDescription<EOK>();
 
-            _ = result.Should().Be(EOKEnum.TESTE_1);
+            _ = result.Should().Be(EOK.TESTE1);
         }
 
         [Fact]
@@ -24,7 +24,7 @@ namespace CoreLibrary.UnitTest
         {
             string texto = "ABC 1";
 
-            _ = this.Invoking(_ => texto.GetEnumValueFromDescription<EOKEnum>())
+            _ = this.Invoking(_ => texto.GetEnumValueFromDescription<EOK>())
                 .Should()
                 .Throw<EnumItemNotFoundException>()
                 .WithMessage($"Item não encontrado no enumerador.\n - {texto}");

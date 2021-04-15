@@ -11,7 +11,7 @@ using Xunit;
 
 namespace CoreLibrary.UnitTest
 {
-    public class BaseEntity_Test
+    public class BaseEntityTest
     {
         [Fact]
         public void CheckIfGuidPassedIsEqual()
@@ -20,7 +20,7 @@ namespace CoreLibrary.UnitTest
             Guid generatedGuid = Guid.NewGuid();
 
             //Act
-            BaseEntity entity = new BaseEntity(generatedGuid);
+            BaseEntity entity = new(generatedGuid);
 
             //Verify
             _ = generatedGuid.Should().Be(entity.Id);
@@ -30,7 +30,7 @@ namespace CoreLibrary.UnitTest
         public void ShouldNotHaveErrorsIfGuidIsNotEmpty()
         {
             //Arrange
-            BaseEntity entity = new BaseEntity();
+            BaseEntity entity = new();
 
             //Act
             TestValidationResult<BaseEntity> result = new BaseEntityValidations().TestValidate(entity);
@@ -44,7 +44,7 @@ namespace CoreLibrary.UnitTest
         {
             //Arrange
             Guid generatedGuid = Guid.NewGuid();
-            BaseEntity entity = new BaseEntity(generatedGuid);
+            BaseEntity entity = new(generatedGuid);
 
             //Act
             TestValidationResult<BaseEntity> result = new BaseEntityValidations().TestValidate(entity);

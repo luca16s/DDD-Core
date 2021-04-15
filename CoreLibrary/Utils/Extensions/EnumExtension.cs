@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-namespace CoreLibrary.Extensions
+namespace CoreLibrary.Utils.Extensions
 {
     /// <summary>Classe de extensão para operações com enumeradores.</summary>
     public static class EnumExtension

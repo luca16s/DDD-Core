@@ -8,7 +8,7 @@ using Xunit;
 
 namespace CoreLibrary.UnitTest
 {
-    public class EnumDescriptionNotFoundException_Tests
+    public class EnumDescriptionNotFoundExceptionTests
     {
         [Fact]
         public void ShouldShowCustomizedMessage()

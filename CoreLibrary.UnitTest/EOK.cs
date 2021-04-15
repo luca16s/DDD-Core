@@ -2,15 +2,15 @@
 
 namespace CoreLibrary.UnitTest
 {
-    public enum EOKEnum
+    public enum EOK
     {
         [Description("TESTE 1")]
-        TESTE_1,
+        TESTE1,
 
         [Description("TESTE 2")]
-        TESTE_2,
+        TESTE2,
 
         [Description("TESTE 3")]
-        TESTE_3
+        TESTE3
     }
 }

@@ -1,7 +1,7 @@
 ﻿namespace CoreLibrary.Wpf.Converter
 {
-    using CoreLibrary.Extensions;
     using CoreLibrary.Models;
+    using CoreLibrary.Utils.Extensions;
 
     using System;
     using System.Collections.Generic;

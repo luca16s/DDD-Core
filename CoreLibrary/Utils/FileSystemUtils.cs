@@ -13,7 +13,7 @@ namespace CoreLibrary.Utils
     public static class FileSystemUtils
     {
         private const string PlataformNotSupportedMessage = "Somente windows é suportado nesta operação.";
-        private static int MAX_DELETE_ATTEMPTS = 0;
+        private static int MAX_DELETE_ATTEMPTS;
 
         /// <summary>Apaga determinado arquivo baseado em um caminho específico.</summary>
         /// <param name="path">Endereço no sistema de arquivos.</param>

@@ -25,8 +25,12 @@ namespace CoreLibrary.Utils.Extensions
             foreach (FieldInfo field in typeof(T).GetFields())
             {
                 if (Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) is DescriptionAttribute descriptionAttribute)
-                    if (descriptionAttribute.Description.Equals(value))
+                {
+                    if (descriptionAttribute.Description.Equals(value, StringComparison.Ordinal))
+                    {
                         return (T?)field.GetValue(value);
+                    }
+                }
             }
 
             throw new EnumItemNotFoundException(value);
