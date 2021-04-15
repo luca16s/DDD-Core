@@ -1,7 +1,7 @@
-﻿namespace CoreLibrary.UnitTest
-{
-    using System.ComponentModel;
+﻿using System.ComponentModel;
 
+namespace CoreLibrary.UnitTest
+{
     public enum EOKEnum
     {
         [Description("TESTE 1")]

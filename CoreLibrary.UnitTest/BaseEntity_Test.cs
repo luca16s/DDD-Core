@@ -1,17 +1,31 @@
+using CoreLibrary.Models;
+using CoreLibrary.Validations;
+
+using FluentAssertions;
+
+using FluentValidation.TestHelper;
+
+using System;
+
+using Xunit;
+
 namespace CoreLibrary.UnitTest
 {
-    using CoreLibrary.Validations;
-
-    using FluentAssertions;
-
-    using FluentValidation.TestHelper;
-
-    using System;
-
-    using Xunit;
-
     public class BaseEntity_Test
     {
+        [Fact]
+        public void CheckIfGuidPassedIsEqual()
+        {
+            //Arrange
+            Guid generatedGuid = Guid.NewGuid();
+
+            //Act
+            BaseEntity entity = new BaseEntity(generatedGuid);
+
+            //Verify
+            _ = generatedGuid.Should().Be(entity.Id);
+        }
+
         [Fact]
         public void ShouldNotHaveErrorsIfGuidIsNotEmpty()
         {
@@ -37,19 +51,6 @@ namespace CoreLibrary.UnitTest
 
             //Verify
             result.ShouldNotHaveValidationErrorFor(x => x.Id);
-            _ = generatedGuid.Should().Be(entity.Id);
-        }
-
-        [Fact]
-        public void CheckIfGuidPassedIsEqual()
-        {
-            //Arrange
-            Guid generatedGuid = Guid.NewGuid();
-
-            //Act
-            BaseEntity entity = new BaseEntity(generatedGuid);
-
-            //Verify
             _ = generatedGuid.Should().Be(entity.Id);
         }
     }

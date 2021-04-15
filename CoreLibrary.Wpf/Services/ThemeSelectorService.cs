@@ -19,6 +19,18 @@
         {
         }
 
+        public EAppTheme GetCurrentTheme()
+        {
+            if (Application.Current.Properties.Contains("Theme"))
+            {
+                string themeName = Application.Current.Properties["Theme"].ToString();
+                _ = Enum.TryParse(themeName, out EAppTheme theme);
+                return theme;
+            }
+
+            return EAppTheme.Default;
+        }
+
         public void InitializeTheme()
         {
             _ = ThemeManager.Current.AddLibraryTheme(new LibraryTheme(new Uri(HcDarkTheme), MahAppsLibraryThemeProvider.DefaultInstance));
@@ -43,18 +55,6 @@
             }
 
             Application.Current.Properties["Theme"] = theme.ToString();
-        }
-
-        public EAppTheme GetCurrentTheme()
-        {
-            if (Application.Current.Properties.Contains("Theme"))
-            {
-                string themeName = Application.Current.Properties["Theme"].ToString();
-                _ = Enum.TryParse(themeName, out EAppTheme theme);
-                return theme;
-            }
-
-            return EAppTheme.Default;
         }
     }
 }

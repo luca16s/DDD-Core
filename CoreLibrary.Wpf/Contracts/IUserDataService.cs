@@ -8,8 +8,8 @@
     {
         event EventHandler<BaseUserViewModel> UserDataUpdated;
 
-        void Initialize();
-
         BaseUserViewModel GetUser();
+
+        void Initialize();
     }
 }

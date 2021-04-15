@@ -3,18 +3,18 @@
     using System;
     using System.Windows.Input;
 
-    public class RelayCommand : ICommand
+    public class RelayCommandGeneric<T> : ICommand
     {
-        private readonly Func<bool> _canExecute;
-        private readonly Action _execute;
+        private readonly Func<T, bool> _canExecute;
+        private readonly Action<T> _execute;
 
-        public RelayCommand(Action execute)
+        public RelayCommandGeneric(Action<T> execute)
             : this(execute, null)
         {
         }
 
-        public RelayCommand(Action execute,
-            Func<bool> canExecute)
+        public RelayCommandGeneric(Action<T> execute,
+            Func<T, bool> canExecute)
         {
             _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute;
@@ -24,12 +24,12 @@
 
         public bool CanExecute(object parameter)
         {
-            return _canExecute == null || _canExecute();
+            return _canExecute == null || _canExecute((T)parameter);
         }
 
         public void Execute(object parameter)
         {
-            _execute();
+            _execute((T)parameter);
         }
 
         public void OnCanExecuteChanged()

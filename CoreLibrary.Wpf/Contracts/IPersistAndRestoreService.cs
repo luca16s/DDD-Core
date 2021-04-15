@@ -2,8 +2,8 @@
 {
     public interface IPersistAndRestoreService
     {
-        void RestoreData();
-
         void PersistData();
+
+        void RestoreData();
     }
 }

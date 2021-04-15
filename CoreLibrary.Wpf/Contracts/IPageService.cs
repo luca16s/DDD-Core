@@ -5,8 +5,8 @@
 
     public interface IPageService
     {
-        Type GetPageType(string key);
-
         Page GetPage(string key);
+
+        Type GetPageType(string key);
     }
 }

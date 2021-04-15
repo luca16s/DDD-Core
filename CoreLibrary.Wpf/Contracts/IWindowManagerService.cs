@@ -6,10 +6,10 @@
     {
         Window MainWindow { get; }
 
-        void OpenInNewWindow(string pageKey, object parameter = null);
+        Window GetWindow(string pageKey);
 
         bool? OpenInDialog(string pageKey, object parameter = null);
 
-        Window GetWindow(string pageKey);
+        void OpenInNewWindow(string pageKey, object parameter = null);
     }
 }

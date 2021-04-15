@@ -12,16 +12,41 @@
 
     public class WindowManagerService : IWindowManagerService
     {
-        private readonly IServiceProvider _serviceProvider;
         private readonly IPageService _pageService;
-
-        public Window MainWindow
-            => Application.Current.MainWindow;
+        private readonly IServiceProvider _serviceProvider;
 
         public WindowManagerService(IServiceProvider serviceProvider, IPageService pageService)
         {
             _serviceProvider = serviceProvider;
             _pageService = pageService;
+        }
+
+        public Window MainWindow
+                    => Application.Current.MainWindow;
+
+        public Window GetWindow(string key)
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                object dataContext = window.DataContext;
+                if (dataContext?.GetType().FullName == key)
+                {
+                    return window;
+                }
+            }
+
+            return null;
+        }
+
+        public bool? OpenInDialog(string key, object parameter = null)
+        {
+            var shellWindow = _serviceProvider.GetService(typeof(IShellDialogWindow)) as Window;
+            Frame frame = ((IShellDialogWindow)shellWindow).GetDialogFrame();
+            frame.Navigated += OnNavigated;
+            shellWindow.Closed += OnWindowClosed;
+            Page page = _pageService.GetPage(key);
+            bool navigated = frame.Navigate(page, parameter);
+            return shellWindow.ShowDialog();
         }
 
         public void OpenInNewWindow(string key, object parameter = null)
@@ -51,31 +76,6 @@
                 frame.Navigated += OnNavigated;
                 bool navigated = frame.Navigate(page, parameter);
             }
-        }
-
-        public bool? OpenInDialog(string key, object parameter = null)
-        {
-            var shellWindow = _serviceProvider.GetService(typeof(IShellDialogWindow)) as Window;
-            Frame frame = ((IShellDialogWindow)shellWindow).GetDialogFrame();
-            frame.Navigated += OnNavigated;
-            shellWindow.Closed += OnWindowClosed;
-            Page page = _pageService.GetPage(key);
-            bool navigated = frame.Navigate(page, parameter);
-            return shellWindow.ShowDialog();
-        }
-
-        public Window GetWindow(string key)
-        {
-            foreach (Window window in Application.Current.Windows)
-            {
-                object dataContext = window.DataContext;
-                if (dataContext?.GetType().FullName == key)
-                {
-                    return window;
-                }
-            }
-
-            return null;
         }
 
         private void OnNavigated(object sender, NavigationEventArgs e)

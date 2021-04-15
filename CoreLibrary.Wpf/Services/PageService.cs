@@ -23,6 +23,12 @@
             }
         }
 
+        public Page GetPage(string key)
+        {
+            Type pageType = GetPageType(key);
+            return _serviceProvider.GetService(pageType) as Page;
+        }
+
         public Type GetPageType(string key)
         {
             Type pageType;
@@ -35,12 +41,6 @@
             }
 
             return pageType;
-        }
-
-        public Page GetPage(string key)
-        {
-            Type pageType = GetPageType(key);
-            return _serviceProvider.GetService(pageType) as Page;
         }
 
         private void Configure(string viewModelFullName, Type pageType)

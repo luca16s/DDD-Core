@@ -25,12 +25,7 @@
             bool trueValue = !Reverse;
             bool falseValue = Reverse;
 
-            if (value is Visibility visibilityValue)
-            {
-                return visibilityValue == Visibility.Visible ? trueValue : falseValue;
-            }
-
-            return falseValue;
+            return value is Visibility visibilityValue ? visibilityValue == Visibility.Visible ? trueValue : falseValue : (object)falseValue;
         }
     }
 }

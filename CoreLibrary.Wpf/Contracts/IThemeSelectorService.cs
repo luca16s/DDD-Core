@@ -4,10 +4,10 @@
 
     public interface IThemeSelectorService
     {
+        EAppTheme GetCurrentTheme();
+
         void InitializeTheme();
 
         void SetTheme(EAppTheme theme);
-
-        EAppTheme GetCurrentTheme();
     }
 }

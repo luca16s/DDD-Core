@@ -1,23 +1,21 @@
 ﻿// -----------------------------------------------------------------------
 // <copyright file="StringExtension.cs" company="Îakaré Software'oka">
-// Copyright (c) Îakaré Software'oka. All rights reserved.
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+//     Copyright (c) Îakaré Software'oka. All rights reserved. Licensed under the MIT license. See
+//     LICENSE file in the project root for full license information.
 // </copyright>
 // -----------------------------------------------------------------------
 
+using CoreLibrary.Exceptions;
+
+using System;
+using System.ComponentModel;
+using System.Reflection;
+
 namespace CoreLibrary.Utils.Extensions
 {
-    using CoreLibrary.Exceptions;
-
-    using System;
-    using System.ComponentModel;
-    using System.Reflection;
-
     public static class StringExtension
     {
-        /// <summary>
-        /// Busca o valor de um enum através de uma string.
-        /// </summary>
+        /// <summary>Busca o valor de um enum através de uma string.</summary>
         /// <typeparam name="T">Tipo do enum.</typeparam>
         /// <param name="value">Texto do enum.</param>
         /// <returns>Retorna item do enum.</returns>

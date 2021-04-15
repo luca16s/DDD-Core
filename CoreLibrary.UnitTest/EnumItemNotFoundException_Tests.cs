@@ -1,24 +1,15 @@
-﻿namespace CoreLibrary.UnitTest
+﻿using CoreLibrary.Exceptions;
+
+using FluentAssertions;
+
+using System;
+
+using Xunit;
+
+namespace CoreLibrary.UnitTest
 {
-    using CoreLibrary.Exceptions;
-
-    using FluentAssertions;
-
-    using System;
-
-    using Xunit;
-
     public class EnumItemNotFoundException_Tests
     {
-        [Fact]
-        public void ShouldShowDefaultMessage()
-        {
-            _ = this.Invoking(g => throw new EnumItemNotFoundException())
-                .Should()
-                .Throw<EnumItemNotFoundException>()
-                .WithMessage("Item não encontrado no enumerador.");
-        }
-
         [Fact]
         public void ShouldShowCustomizedMessage()
         {
@@ -26,6 +17,15 @@
                 .Should()
                 .Throw<EnumItemNotFoundException>()
                 .WithMessage("Item não encontrado no enumerador.\n - Teste");
+        }
+
+        [Fact]
+        public void ShouldShowDefaultMessage()
+        {
+            _ = this.Invoking(g => throw new EnumItemNotFoundException())
+                .Should()
+                .Throw<EnumItemNotFoundException>()
+                .WithMessage("Item não encontrado no enumerador.");
         }
 
         [Fact]

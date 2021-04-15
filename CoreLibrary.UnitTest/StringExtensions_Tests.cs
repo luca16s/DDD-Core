@@ -1,12 +1,12 @@
-﻿namespace CoreLibrary.UnitTest
+﻿using CoreLibrary.Exceptions;
+using CoreLibrary.Utils.Extensions;
+
+using FluentAssertions;
+
+using Xunit;
+
+namespace CoreLibrary.UnitTest
 {
-    using CoreLibrary.Exceptions;
-    using CoreLibrary.Utils.Extensions;
-
-    using FluentAssertions;
-
-    using Xunit;
-
     public class StringExtensions_Tests
     {
         [Fact]

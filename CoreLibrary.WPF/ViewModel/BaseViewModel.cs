@@ -3,12 +3,17 @@
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
 
-    public class BaseViewModel : CoreLibrary.BaseViewModel, INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         protected void Set<T>(ref T storage,
-            T value,
+                    T value,
             [CallerMemberName]
             string propertyName = null)
         {
@@ -20,8 +25,5 @@
             storage = value;
             OnPropertyChanged(propertyName);
         }
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

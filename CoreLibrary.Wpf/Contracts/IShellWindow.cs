@@ -4,10 +4,10 @@
 
     public interface IShellWindow
     {
+        void CloseWindow();
+
         Frame GetNavigationFrame();
 
         void ShowWindow();
-
-        void CloseWindow();
     }
 }

@@ -2,6 +2,7 @@
 {
     using CoreLibrary.Wpf.Contracts;
     using CoreLibrary.Wpf.Models;
+    using CoreLibrary.Wpf.ViewModel;
 
     using Microsoft.Extensions.Hosting;
     using Microsoft.Extensions.Options;
@@ -14,13 +15,13 @@
 
     public class ApplicationHostService : IHostedService
     {
-        private readonly IServiceProvider _serviceProvider;
+        private readonly AppConfig _appConfig;
+        private readonly IIdentityService _identityService;
         private readonly INavigationService _navigationService;
         private readonly IPersistAndRestoreService _persistAndRestoreService;
+        private readonly IServiceProvider _serviceProvider;
         private readonly IThemeSelectorService _themeSelectorService;
-        private readonly IIdentityService _identityService;
         private readonly IUserDataService _userDataService;
-        private readonly AppConfig _appConfig;
         private IShellWindow _shellWindow;
 
         public ApplicationHostService(IServiceProvider serviceProvider,
@@ -58,15 +59,10 @@
             await Task.CompletedTask;
         }
 
-        private async Task InitializeAsync()
+        private static async Task StartupAsync()
         {
-            _persistAndRestoreService.RestoreData();
-            _themeSelectorService.InitializeTheme();
             await Task.CompletedTask;
-            _userDataService.Initialize();
         }
-
-        private static async Task StartupAsync() => await Task.CompletedTask;
 
         private async Task HandleActivationAsync()
         {
@@ -79,6 +75,14 @@
                 _ = _navigationService.NavigateTo(typeof(BaseViewModel).FullName);
                 await Task.CompletedTask;
             }
+        }
+
+        private async Task InitializeAsync()
+        {
+            _persistAndRestoreService.RestoreData();
+            _themeSelectorService.InitializeTheme();
+            await Task.CompletedTask;
+            _userDataService.Initialize();
         }
     }
 }

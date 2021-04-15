@@ -13,28 +13,18 @@
         private Frame _frame;
         private object _lastParameterUsed;
 
-        public event EventHandler<string> Navigated;
-
-        public bool CanGoBack => _frame.CanGoBack;
-
         public NavigationService(IPageService pageService)
         {
             _pageService = pageService;
         }
 
-        public void Initialize(Frame shellFrame)
-        {
-            if (_frame == null)
-            {
-                _frame = shellFrame;
-                _frame.Navigated += OnNavigated;
-            }
-        }
+        public event EventHandler<string> Navigated;
 
-        public void UnsubscribeNavigation()
+        public bool CanGoBack => _frame.CanGoBack;
+
+        public void CleanNavigation()
         {
-            _frame.Navigated -= OnNavigated;
-            _frame = null;
+            _frame.CleanNavigation();
         }
 
         public void GoBack()
@@ -47,6 +37,15 @@
                 {
                     navigationAware.OnNavigatedFrom();
                 }
+            }
+        }
+
+        public void Initialize(Frame shellFrame)
+        {
+            if (_frame == null)
+            {
+                _frame = shellFrame;
+                _frame.Navigated += OnNavigated;
             }
         }
 
@@ -75,8 +74,11 @@
             return false;
         }
 
-        public void CleanNavigation()
-            => _frame.CleanNavigation();
+        public void UnsubscribeNavigation()
+        {
+            _frame.Navigated -= OnNavigated;
+            _frame = null;
+        }
 
         private void OnNavigated(object sender, NavigationEventArgs e)
         {
