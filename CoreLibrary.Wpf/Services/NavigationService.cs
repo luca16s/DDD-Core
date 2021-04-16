@@ -1,6 +1,7 @@
 ﻿namespace CoreLibrary.Wpf.Services
 {
-    using CoreLibrary.Wpf.Contracts;
+    using CoreLibrary.Wpf.Contracts.Services;
+    using CoreLibrary.Wpf.Contracts.ViewModels;
     using CoreLibrary.Wpf.Extensions;
 
     using System;

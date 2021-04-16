@@ -13,7 +13,7 @@ namespace CoreLibrary.UnitTest
         [Fact]
         public void EnumDescriptionShouldNotReturnNull()
         {
-            var enumModelo = new Faker<EnumModel>()
+            EnumModel enumModelo = new Faker<EnumModel>()
                 .RuleFor(g => g.Description, f => f.Lorem.Word())
                 .Generate();
 
@@ -23,7 +23,7 @@ namespace CoreLibrary.UnitTest
         [Fact]
         public void EnumModelShouldNotBeNull()
         {
-            var enumModelo = new Faker<EnumModel>()
+            EnumModel enumModelo = new Faker<EnumModel>()
                 .RuleFor(g => g.Description, f => f.Lorem.Word())
                 .Generate();
 
@@ -33,7 +33,7 @@ namespace CoreLibrary.UnitTest
         [Fact]
         public void EnumValueShouldNotReturnNull()
         {
-            var enumModelo = new Faker<EnumModel>()
+            EnumModel enumModelo = new Faker<EnumModel>()
                 .RuleFor(g => g.Value, f => EError.TESTE1)
                 .Generate();
 

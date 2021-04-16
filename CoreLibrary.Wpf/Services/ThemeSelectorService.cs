@@ -2,7 +2,7 @@
 {
     using ControlzEx.Theming;
 
-    using CoreLibrary.Wpf.Contracts;
+    using CoreLibrary.Wpf.Contracts.Services;
     using CoreLibrary.Wpf.Enums;
 
     using MahApps.Metro.Theming;

@@ -1,4 +1,4 @@
-﻿namespace CoreLibrary.Wpf.Contracts
+﻿namespace CoreLibrary.Wpf.Contracts.Views
 {
     using System.Windows.Controls;
 

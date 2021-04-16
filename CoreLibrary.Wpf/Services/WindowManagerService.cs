@@ -1,6 +1,8 @@
 ﻿namespace CoreLibrary.Wpf.Services
 {
-    using CoreLibrary.Wpf.Contracts;
+    using CoreLibrary.Wpf.Contracts.Services;
+    using CoreLibrary.Wpf.Contracts.ViewModels;
+    using CoreLibrary.Wpf.Contracts.Views;
     using CoreLibrary.Wpf.Extensions;
 
     using MahApps.Metro.Controls;

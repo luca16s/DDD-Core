@@ -1,4 +1,4 @@
-﻿namespace CoreLibrary.Wpf.Contracts
+﻿namespace CoreLibrary.Wpf.Contracts.Services
 {
     using System;
     using System.Windows.Controls;

@@ -1,7 +1,7 @@
 ﻿namespace CoreLibrary.Wpf.Services
 {
     using CoreLibrary.Enums;
-    using CoreLibrary.Wpf.Contracts;
+    using CoreLibrary.Wpf.Contracts.Services;
 
     using Microsoft.Identity.Client;
 

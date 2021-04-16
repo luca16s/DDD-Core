@@ -7,15 +7,10 @@
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        public string Id { get; set; }
 
-        protected void Set<T>(ref T storage,
-                    T value,
-            [CallerMemberName]
-            string propertyName = null)
+        public void Set<T>(ref T storage, T value,
+            [CallerMemberName] string propertyName = null)
         {
             if (Equals(storage, value))
             {
@@ -24,6 +19,11 @@
 
             storage = value;
             OnPropertyChanged(propertyName);
+        }
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
