@@ -38,6 +38,6 @@ namespace CoreLibrary.Interfaces
         /// <param name="id">Identificador da entidade.</param>
         /// <param name="item">Entidade a ser atualizada.</param>
         /// <returns>Entidade atualizada.</returns>
-        T UpdateItem(Guid id, T item);
+        Task<T> UpdateItem(Guid id, T item);
     }
 }

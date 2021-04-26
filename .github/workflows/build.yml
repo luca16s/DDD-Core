@@ -18,7 +18,7 @@ jobs:
     - name: Restaurando pacotes
       run: dotnet restore
     - name: Construindo projetos
-      run: dotnet build -c Release
+      run: dotnet build -c Release --no-restore
     - name: Rodando testes
       run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput='../cobertura.xml'
     - name: Enviando dados de cobertura
@@ -30,3 +30,8 @@ jobs:
         name: codecov-umbrella
         fail_ci_if_error: true
         verbose: true
+    - name: Publicar pacote
+      run: |
+        dotnet pack --output pacotes
+        dotnet nuget push *.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/Iakare-Software-oka/index.json" --skip-duplicate
+    
