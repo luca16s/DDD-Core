@@ -37,7 +37,7 @@ namespace CoreLibrary.Interfaces
         /// <summary>Atualiza uma entidade com base em um identificador passado.</summary>
         /// <param name="id">Identificador da entidade.</param>
         /// <param name="item">Entidade a ser atualizada.</param>
-        /// <returns>Entidade atualizado.</returns>
-        T UpdateItem(Guid id, T item);
+        /// <returns>Entidade atualizada.</returns>
+        Task<T> UpdateItem(Guid id, T item);
     }
 }
