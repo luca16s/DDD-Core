@@ -6,8 +6,8 @@
     <Company>Îakaré Software'oka</Company>
     <Copyright>Îakaré Software'oka</Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/luca16s/CoreLibrary</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/luca16s/CoreLibrary</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Iakare-Software-oka/CoreLibrary</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Iakare-Software-oka/CoreLibrary</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Core Library for Îakaré Software'oka Projects.</Description>
     <PackageId>CoreLibrary</PackageId>
