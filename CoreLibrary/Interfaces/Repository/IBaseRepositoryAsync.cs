@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CoreLibrary.Interfaces.Repository
+namespace CoreLibrary.Interfaces
 {
     /// <summary>Interface assíncrona para salvamento no banco de dados.</summary>
     /// <typeparam name="T">Entidade que será salva.</typeparam>

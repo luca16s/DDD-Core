@@ -8,7 +8,7 @@ using CoreLibrary.Models;
 using System;
 using System.Collections.Generic;
 
-namespace CoreLibrary.Interfaces.Services
+namespace CoreLibrary.Interfaces
 {
     /// <summary>Interface síncrona de serviço.</summary>
     /// <typeparam name="T">Entidade que será salva.</typeparam>

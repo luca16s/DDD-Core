@@ -3,7 +3,7 @@
 //     LICENSE file in the project root for full license information.
 // </copyright>
 
-namespace CoreLibrary.Interfaces.Factory
+namespace CoreLibrary.Interfaces
 {
     /// <summary>Interface para criação de fábricas.</summary>
     /// <typeparam name="T">Tipo que define entidade a ser instanciada.</typeparam>

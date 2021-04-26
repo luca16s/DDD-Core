@@ -8,7 +8,7 @@ using CoreLibrary.Models;
 using System;
 using System.Collections.Generic;
 
-namespace CoreLibrary.Interfaces.Repository
+namespace CoreLibrary.Interfaces
 {
     /// <summary>Interface síncrona para salvamento no banco de dados.</summary>
     /// <typeparam name="T">Entidade que será salva.</typeparam>

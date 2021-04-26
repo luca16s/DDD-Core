@@ -1,4 +1,4 @@
-﻿namespace CoreLibrary.Interfaces.Services
+﻿namespace CoreLibrary.Interfaces
 {
     public interface IFileService
     {

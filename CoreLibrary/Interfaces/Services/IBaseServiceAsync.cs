@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CoreLibrary.Interfaces.Services
+namespace CoreLibrary.Interfaces
 {
     /// <summary>Interface assíncrona de serviço.</summary>
     /// <typeparam name="T">Entidade que será salva.</typeparam>

@@ -9,14 +9,22 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CoreLibrary.Interfaces.UnitOfWork
+namespace CoreLibrary.Interfaces
 {
     /// <summary>Classe para servir de interface no salvamento do banco de dados.</summary>
     public interface IUnitOfWork : IDisposable
     {
         /// <summary>Inicia transação com o banco de dados.</summary>
         /// <returns>Retorna a transação.</returns>
+        IDbContextTransaction? BeginTransaction();
+
+        /// <summary>Inicia transação com o banco de dados.</summary>
+        /// <returns>Retorna a transação.</returns>
         Task<IDbContextTransaction?> BeginTransactionAsync();
+
+        /// <summary>Comita a transação do banco.</summary>
+        /// <param name="transaction">Transação aberta.</param>
+        void CommitTransaction(IDbContextTransaction transaction);
 
         /// <summary>Comita a transação do banco.</summary>
         /// <param name="transaction">Transação aberta.</param>
@@ -30,6 +38,10 @@ namespace CoreLibrary.Interfaces.UnitOfWork
         /// <param name="cancellationToken">Cancela o processo de salvamento.</param>
         /// <returns>Retorna o status da operação.</returns>
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>Salva as modificações no banco.</summary>
+        /// <returns>Retorna o status da operação.</returns>
+        bool SaveEntities();
 
         /// <summary>Salva a entidade modificada.</summary>
         /// <param name="cancellationToken">Cancela o processo de salvamento da entidade.</param>
