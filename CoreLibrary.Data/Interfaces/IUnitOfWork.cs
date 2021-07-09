@@ -3,14 +3,14 @@
 //     LICENSE file in the project root for full license information.
 // </copyright>
 
-using Microsoft.EntityFrameworkCore.Storage;
-
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace CoreLibrary.Interfaces
+namespace CoreLibrary.Data.Interfaces
 {
+    using System;
+    using System.Threading;
+    using System.Threading.Tasks;
+
+    using Microsoft.EntityFrameworkCore.Storage;
+
     /// <summary>Classe para servir de interface no salvamento do banco de dados.</summary>
     public interface IUnitOfWork : IDisposable
     {

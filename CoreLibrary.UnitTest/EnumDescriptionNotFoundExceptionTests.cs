@@ -1,13 +1,13 @@
-﻿using CoreLibrary.Exceptions;
-
-using FluentAssertions;
-
-using System;
-
-using Xunit;
-
-namespace CoreLibrary.UnitTest
+﻿namespace CoreLibrary.UnitTest
 {
+    using CoreLibrary.Exceptions;
+
+    using FluentAssertions;
+
+    using System;
+
+    using Xunit;
+
     public class EnumDescriptionNotFoundExceptionTests
     {
         [Fact]

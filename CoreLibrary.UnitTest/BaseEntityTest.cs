@@ -1,16 +1,16 @@
-using CoreLibrary.Models;
-using CoreLibrary.Validations;
-
-using FluentAssertions;
-
-using FluentValidation.TestHelper;
-
-using System;
-
-using Xunit;
-
 namespace CoreLibrary.UnitTest
 {
+    using CoreLibrary.Models;
+    using CoreLibrary.Validations;
+
+    using FluentAssertions;
+
+    using FluentValidation.TestHelper;
+
+    using System;
+
+    using Xunit;
+
     public class BaseEntityTest
     {
         [Fact]

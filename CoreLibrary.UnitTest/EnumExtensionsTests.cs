@@ -1,16 +1,16 @@
-﻿using CoreLibrary.Exceptions;
-using CoreLibrary.Models;
-using CoreLibrary.Utils.Extensions;
-
-using FluentAssertions;
-
-using System;
-using System.Collections.Generic;
-
-using Xunit;
-
-namespace CoreLibrary.UnitTest
+﻿namespace CoreLibrary.UnitTest
 {
+    using CoreLibrary.Exceptions;
+    using CoreLibrary.Models;
+    using CoreLibrary.Utils.Extensions;
+
+    using FluentAssertions;
+
+    using System;
+    using System.Collections.Generic;
+
+    using Xunit;
+
     public class EnumExtensionsTests
     {
         [Fact]

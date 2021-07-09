@@ -1,43 +1,42 @@
-﻿// <copyright file="IBaseRepositoryAsync.cs" company="Îakaré Software'oka">
+﻿// <copyright file="IBaseService.cs" company="Îakaré Software'oka">
 //     Copyright (c) Îakaré Software'oka. All rights reserved. Licensed under the MIT license. See
 //     LICENSE file in the project root for full license information.
 // </copyright>
 
-using CoreLibrary.Models;
-
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace CoreLibrary.Interfaces
+namespace CoreLibrary.Service.Interfaces
 {
-    /// <summary>Interface assíncrona para salvamento no banco de dados.</summary>
+    using System;
+    using System.Collections.Generic;
+
+    using CoreLibrary.Models;
+
+    /// <summary>Interface síncrona de serviço.</summary>
     /// <typeparam name="T">Entidade que será salva.</typeparam>
-    public interface IBaseRepositoryAsync<T>
+    public interface IBaseService<T>
         where T : BaseEntity
     {
-        /// <summary>Adiciona nova entidade no banco de dados de forma assíncrona.</summary>
+        /// <summary>Adiciona uma nova entidade no banco de dados.</summary>
         /// <param name="item">Entidade a ser salva.</param>
         /// <returns>Entidade salva.</returns>
-        Task<T> AddItemAsync(T item);
+        T AddItem(T item);
 
         /// <summary>Deleta uma entidade no banco de dados.</summary>
         /// <param name="item">Entidade a ser deletada.</param>
         void DeleteItem(T item);
 
-        /// <summary>Retorna todas as entidades do banco de dados de forma assíncrona.</summary>
+        /// <summary>Retorna todas as entidades do banco de dados.</summary>
         /// <returns>Todas as entidades.</returns>
-        Task<IEnumerable<T>> GetAllItemsAsync();
+        IEnumerable<T> GetAllItems();
 
-        /// <summary>Retorna uma entidade com base em um identificador de forma assíncrona.</summary>
+        /// <summary>Retorna uma entidade com base em um identificador.</summary>
         /// <param name="id">Identificador da entidade.</param>
         /// <returns>Entidade encontrada.</returns>
-        Task<T> GetItemAsync(Guid id);
+        T GetItem(Guid id);
 
-        /// <summary>Atualiza uma entidade com base em um identificador passado.</summary>
+        /// <summary>Atualiza um item com base em um identificador passado.</summary>
         /// <param name="id">Identificador da entidade.</param>
         /// <param name="item">Entidade a ser atualizada.</param>
         /// <returns>Entidade atualizada.</returns>
-        Task<T> UpdateItem(Guid id, T item);
+        T UpdateItem(Guid id, T item);
     }
 }

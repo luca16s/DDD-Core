@@ -1,21 +1,21 @@
-﻿// <copyright file="IBaseService.cs" company="Îakaré Software'oka">
+﻿// <copyright file="IBaseRepository.cs" company="Îakaré Software'oka">
 //     Copyright (c) Îakaré Software'oka. All rights reserved. Licensed under the MIT license. See
 //     LICENSE file in the project root for full license information.
 // </copyright>
 
-using CoreLibrary.Models;
-
-using System;
-using System.Collections.Generic;
-
-namespace CoreLibrary.Interfaces
+namespace CoreLibrary.Data.Interfaces
 {
-    /// <summary>Interface síncrona de serviço.</summary>
+    using System;
+    using System.Collections.Generic;
+
+    using CoreLibrary.Models;
+
+    /// <summary>Interface síncrona para salvamento no banco de dados.</summary>
     /// <typeparam name="T">Entidade que será salva.</typeparam>
-    public interface IBaseService<T>
+    public interface IBaseRepository<T>
         where T : BaseEntity
     {
-        /// <summary>Adiciona uma nova entidade no banco de dados.</summary>
+        /// <summary>Adiciona nova entidade no banco de dados.</summary>
         /// <param name="item">Entidade a ser salva.</param>
         /// <returns>Entidade salva.</returns>
         T AddItem(T item);
@@ -33,10 +33,10 @@ namespace CoreLibrary.Interfaces
         /// <returns>Entidade encontrada.</returns>
         T GetItem(Guid id);
 
-        /// <summary>Atualiza um item com base em um identificador passado.</summary>
+        /// <summary>Atualiza uma entidade com base em um identificador.</summary>
         /// <param name="id">Identificador da entidade.</param>
         /// <param name="item">Entidade a ser atualizada.</param>
-        /// <returns>Entidade atualizada.</returns>
+        /// <returns>Entidade atualizado.</returns>
         T UpdateItem(Guid id, T item);
     }
 }

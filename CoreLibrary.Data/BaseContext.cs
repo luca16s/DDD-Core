@@ -5,18 +5,18 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-using System;
-using System.Data;
-using System.Threading;
-using System.Threading.Tasks;
-
-using CoreLibrary.Interfaces;
-
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
-
-namespace CoreLibrary.Context
+namespace CoreLibrary.Data.Context
 {
+    using System;
+    using System.Data;
+    using System.Threading;
+    using System.Threading.Tasks;
+
+    using CoreLibrary.Data.Interfaces;
+
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Storage;
+
     /// <summary>Base Context Class.</summary>
     public class BaseContext : DbContext, IUnitOfWork
     {

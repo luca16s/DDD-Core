@@ -1,19 +1,19 @@
-﻿// <copyright file="IBaseServiceAsync.cs" company="Îakaré Software'oka">
+﻿// <copyright file="IBaseRepositoryAsync.cs" company="Îakaré Software'oka">
 //     Copyright (c) Îakaré Software'oka. All rights reserved. Licensed under the MIT license. See
 //     LICENSE file in the project root for full license information.
 // </copyright>
 
-using CoreLibrary.Models;
-
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace CoreLibrary.Interfaces
+namespace CoreLibrary.Data.Interfaces
 {
-    /// <summary>Interface assíncrona de serviço.</summary>
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
+    using CoreLibrary.Models;
+
+    /// <summary>Interface assíncrona para salvamento no banco de dados.</summary>
     /// <typeparam name="T">Entidade que será salva.</typeparam>
-    public interface IBaseServiceAsync<T>
+    public interface IBaseRepositoryAsync<T>
         where T : BaseEntity
     {
         /// <summary>Adiciona nova entidade no banco de dados de forma assíncrona.</summary>
@@ -21,7 +21,7 @@ namespace CoreLibrary.Interfaces
         /// <returns>Entidade salva.</returns>
         Task<T> AddItemAsync(T item);
 
-        /// <summary>Deleta uma entidade no banco de dados de forma assíncrona.</summary>
+        /// <summary>Deleta uma entidade no banco de dados.</summary>
         /// <param name="item">Entidade a ser deletada.</param>
         void DeleteItem(T item);
 
@@ -34,7 +34,7 @@ namespace CoreLibrary.Interfaces
         /// <returns>Entidade encontrada.</returns>
         Task<T> GetItemAsync(Guid id);
 
-        /// <summary>Atualiza uma entidade com base em um identificador passado de forma assíncrona.</summary>
+        /// <summary>Atualiza uma entidade com base em um identificador passado.</summary>
         /// <param name="id">Identificador da entidade.</param>
         /// <param name="item">Entidade a ser atualizada.</param>
         /// <returns>Entidade atualizada.</returns>

@@ -1,7 +1,7 @@
-﻿using System.ComponentModel;
-
-namespace CoreLibrary.UnitTest
+﻿namespace CoreLibrary.UnitTest
 {
+    using System.ComponentModel;
+
     public enum EOK
     {
         [Description("TESTE 1")]

@@ -1,13 +1,13 @@
-﻿using Bogus;
-
-using CoreLibrary.Models;
-
-using FluentAssertions;
-
-using Xunit;
-
-namespace CoreLibrary.UnitTest
+﻿namespace CoreLibrary.UnitTest
 {
+    using Bogus;
+
+    using CoreLibrary.Models;
+
+    using FluentAssertions;
+
+    using Xunit;
+
     public class EnumModelTests
     {
         [Fact]
