@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Authors>Îakaré Software'oka</Authors>
-    <Company>Îakaré Software'oka</Company>
-    <Copyright>Îakaré Software'oka</Copyright>
+    <Company>$(Authors)</Company>
+    <Copyright>$(Authors)</Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Iakare-Software-oka/CoreLibrary</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Iakare-Software-oka/CoreLibrary</RepositoryUrl>

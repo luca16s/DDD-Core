@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <PackageProjectUrl>https://github.com/Iakare-Software-oka/CoreLibrary</PackageProjectUrl>
+    <Authors>Îakaré Software'oka</Authors>
+    <RepositoryUrl>https://github.com/Iakare-Software-oka/CoreLibrary</RepositoryUrl>
+    <Copyright>$(Authors)</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
