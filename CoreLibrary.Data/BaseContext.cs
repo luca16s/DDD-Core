@@ -29,21 +29,16 @@ namespace CoreLibrary.Data.Context
 
         /// <summary>Obtém a transação atual.</summary>
         /// <returns>Transação atual.</returns>
-        public IDbContextTransaction? CurrentTransaction { get; private set; }
+        public IDbContextTransaction CurrentTransaction { get; private set; }
 
         /// <summary>Indica se existe transação.</summary>
         public bool HasActiveTransaction => CurrentTransaction != null;
 
         /// <inheritdoc />
-        public IDbContextTransaction? BeginTransaction()
+        public IDbContextTransaction BeginTransaction()
         {
-            if (!Database.CanConnect())
-            {
-                return default;
-            }
-
             if (CurrentTransaction != null)
-                return default;
+                return CurrentTransaction;
 
             CurrentTransaction = Database
                 .BeginTransaction(IsolationLevel.ReadCommitted);
@@ -52,17 +47,10 @@ namespace CoreLibrary.Data.Context
         }
 
         /// <inheritdoc />
-        public async Task<IDbContextTransaction?> BeginTransactionAsync()
+        public async Task<IDbContextTransaction> BeginTransactionAsync()
         {
-            if (await Database.CanConnectAsync().ConfigureAwait(true))
-            {
-                return default;
-            }
-
             if (CurrentTransaction != null)
-            {
-                return default;
-            }
+                return CurrentTransaction;
 
             CurrentTransaction = await Database
                 .BeginTransactionAsync(IsolationLevel.ReadCommitted)

@@ -16,11 +16,11 @@ namespace CoreLibrary.Data.Interfaces
     {
         /// <summary>Inicia transação com o banco de dados.</summary>
         /// <returns>Retorna a transação.</returns>
-        IDbContextTransaction? BeginTransaction();
+        IDbContextTransaction BeginTransaction();
 
         /// <summary>Inicia transação com o banco de dados.</summary>
         /// <returns>Retorna a transação.</returns>
-        Task<IDbContextTransaction?> BeginTransactionAsync();
+        Task<IDbContextTransaction> BeginTransactionAsync();
 
         /// <summary>Comita a transação do banco.</summary>
         /// <param name="transaction">Transação aberta.</param>
