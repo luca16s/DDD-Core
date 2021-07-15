@@ -1,13 +1,13 @@
 namespace CoreLibrary.UnitTest
 {
+    using System;
+
     using CoreLibrary.Models;
     using CoreLibrary.Validations;
 
     using FluentAssertions;
 
     using FluentValidation.TestHelper;
-
-    using System;
 
     using Xunit;
 
@@ -20,23 +20,10 @@ namespace CoreLibrary.UnitTest
             Guid generatedGuid = Guid.NewGuid();
 
             //Act
-            BaseEntity entity = new(generatedGuid);
+            BaseEntity<string> entity = new(generatedGuid.ToString());
 
             //Verify
             _ = generatedGuid.Should().Be(entity.Id);
-        }
-
-        [Fact]
-        public void ShouldNotHaveErrorsIfGuidIsNotEmpty()
-        {
-            //Arrange
-            BaseEntity entity = new();
-
-            //Act
-            TestValidationResult<BaseEntity> result = new BaseEntityValidations().TestValidate(entity);
-
-            //Verify
-            result.ShouldNotHaveValidationErrorFor(x => x.Id);
         }
 
         [Fact]
@@ -44,10 +31,10 @@ namespace CoreLibrary.UnitTest
         {
             //Arrange
             Guid generatedGuid = Guid.NewGuid();
-            BaseEntity entity = new(generatedGuid);
+            BaseEntity<string> entity = new(generatedGuid.ToString());
 
             //Act
-            TestValidationResult<BaseEntity> result = new BaseEntityValidations().TestValidate(entity);
+            TestValidationResult<BaseEntity<string>> result = new BaseEntityValidations<string>().TestValidate(entity);
 
             //Verify
             result.ShouldNotHaveValidationErrorFor(x => x.Id);

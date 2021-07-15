@@ -3,36 +3,22 @@
 //     LICENSE file in the project root for full license information.
 // </copyright>
 
-using System;
-
 namespace CoreLibrary.Models
 {
     /// <summary>Entidade base.</summary>
-    public class BaseEntity
+    public class BaseEntity<T> where T : class
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BaseEntity" /> class. Inicia uma nova
-        /// instância da classe <see cref="BaseEntity" />. Construtor com geração automática de Identificador.
-        /// </summary>
-        public BaseEntity()
-        {
-            Id = Guid.NewGuid();
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseEntity" /> class. Inicia uma nova
         /// instância da classe <see cref="BaseEntity" />. Construtor com identificador passado via parametrô.
         /// </summary>
-        /// <param name="idGuid">Identificador.</param>
-        public BaseEntity(Guid idGuid)
+        /// <param name="id">Identificador.</param>
+        public BaseEntity(T id)
         {
-            if (idGuid != Guid.Empty)
-            {
-                Id = idGuid;
-            }
+            Id = id;
         }
 
         /// <summary>Obtém identificador da entidade.</summary>
-        public Guid Id { get; private set; }
+        public T Id { get; private set; }
     }
 }

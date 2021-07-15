@@ -13,7 +13,7 @@ namespace CoreLibrary.Data.Interfaces
     /// <summary>Interface síncrona para salvamento no banco de dados.</summary>
     /// <typeparam name="T">Entidade que será salva.</typeparam>
     public interface IBaseRepository<T>
-        where T : BaseEntity
+        where T : BaseEntity<T>
     {
         /// <summary>Adiciona nova entidade no banco de dados.</summary>
         /// <param name="item">Entidade a ser salva.</param>

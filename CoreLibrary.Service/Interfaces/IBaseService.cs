@@ -13,7 +13,7 @@ namespace CoreLibrary.Service.Interfaces
     /// <summary>Interface síncrona de serviço.</summary>
     /// <typeparam name="T">Entidade que será salva.</typeparam>
     public interface IBaseService<T>
-        where T : BaseEntity
+        where T : BaseEntity<T>
     {
         /// <summary>Adiciona uma nova entidade no banco de dados.</summary>
         /// <param name="item">Entidade a ser salva.</param>

@@ -9,7 +9,9 @@ using FluentValidation;
 
 namespace CoreLibrary.Validations
 {
-    public class BaseEntityValidations : AbstractValidator<BaseEntity>
+    public class BaseEntityValidations<T> :
+        AbstractValidator<BaseEntity<T>>
+        where T : class
     {
         public BaseEntityValidations()
         {

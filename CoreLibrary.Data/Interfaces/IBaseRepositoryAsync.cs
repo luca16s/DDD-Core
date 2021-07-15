@@ -14,7 +14,7 @@ namespace CoreLibrary.Data.Interfaces
     /// <summary>Interface assíncrona para salvamento no banco de dados.</summary>
     /// <typeparam name="T">Entidade que será salva.</typeparam>
     public interface IBaseRepositoryAsync<T>
-        where T : BaseEntity
+        where T : BaseEntity<T>
     {
         /// <summary>Adiciona nova entidade no banco de dados de forma assíncrona.</summary>
         /// <param name="item">Entidade a ser salva.</param>
