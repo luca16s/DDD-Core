@@ -1,0 +1,41 @@
+name: Core Library CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restaurando pacotes
+      run: dotnet restore
+    - name: Construindo projetos
+      run: dotnet build -c Release --no-restore
+    - name: Rodando testes
+      run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput='../cobertura.xml'
+    - name: Enviando dados de cobertura
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: ./cobertura.xml
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: true
+        verbose: true
+    - name: Publicar pacote
+      run: |
+        dotnet pack --configuration Release --output out
+        cd out
+        dotnet nuget push *.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/Iakare-Software-oka/index.json" --skip-duplicate
+    - name: Apagar pacotes antigos
+      uses: actions/delete-package-versions@v1.0.3
+      with:
+        package-name: CoreLibrary
